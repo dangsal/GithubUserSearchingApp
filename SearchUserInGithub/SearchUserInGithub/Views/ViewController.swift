@@ -28,6 +28,11 @@ final class ViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.tintColor = .gray
     }
+    private let userTableView: UITableView = UITableView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        $0.contentInset = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0)
+    }
     
     // MARK: - property
     
@@ -36,6 +41,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupLayout()
+        self.setupDelegation()
     }
 
     // MARK: - func
@@ -45,14 +51,43 @@ final class ViewController: UIViewController {
         self.userSearchTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: SizeLiterals.topPadding).isActive = true
         self.userSearchTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
         self.userSearchTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -SizeLiterals.leadingTrailingPadding).isActive = true
-        self.userSearchTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.userSearchTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         self.userSearchTextField.addSubview(self.searchImageView)
-        self.searchImageView.trailingAnchor.constraint(equalTo: self.userSearchTextField.trailingAnchor, constant: -10).isActive = true
+        self.searchImageView.trailingAnchor.constraint(equalTo: self.userSearchTextField.trailingAnchor, constant: -8).isActive = true
         self.searchImageView.centerYAnchor.constraint(equalTo: self.userSearchTextField.centerYAnchor).isActive = true
         self.searchImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         self.searchImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        
+        self.view.addSubview(self.userTableView)
+        self.userTableView.topAnchor.constraint(equalTo: self.userSearchTextField.bottomAnchor, constant: 12).isActive = true
+        self.userTableView.leadingAnchor.constraint(equalTo: self.userSearchTextField.leadingAnchor).isActive = true
+        self.userTableView.trailingAnchor.constraint(equalTo: self.userSearchTextField.trailingAnchor).isActive = true
+        self.userTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
+    private func setupDelegation() {
+        self.userTableView.dataSource = self
+        self.userTableView.delegate = self
+    }
 }
 
+// MARK: - UITableViewDataSource
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "ss"
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension ViewController: UITableViewDelegate {
+    
+}
