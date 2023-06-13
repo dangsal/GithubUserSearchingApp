@@ -22,6 +22,7 @@ final class ViewController: UIViewController {
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.gray.cgColor
         $0.placeholder = TextLiteral.userSearchTextField
+        $0.addPadding()
     }
     
     // MARK: - property

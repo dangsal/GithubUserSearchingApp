@@ -21,6 +21,7 @@
 		D762DB5C2A38D347003C4636 /* SizeLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB5B2A38D347003C4636 /* SizeLiteral.swift */; };
 		D762DB5E2A38D428003C4636 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB5D2A38D428003C4636 /* ImageLiteral.swift */; };
 		D762DB602A38D430003C4636 /* TextLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB5F2A38D430003C4636 /* TextLiteral.swift */; };
+		D762DB622A38D8E5003C4636 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB612A38D8E5003C4636 /* TextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		D762DB5B2A38D347003C4636 /* SizeLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiteral.swift; sourceTree = "<group>"; };
 		D762DB5D2A38D428003C4636 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		D762DB5F2A38D430003C4636 /* TextLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLiteral.swift; sourceTree = "<group>"; };
+		D762DB612A38D8E5003C4636 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		D762DB502A38CFCC003C4636 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D762DB612A38D8E5003C4636 /* TextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				D762DB202A38CF79003C4636 /* ViewController.swift in Sources */,
 				D762DB602A38D430003C4636 /* TextLiteral.swift in Sources */,
 				D762DB1C2A38CF79003C4636 /* AppDelegate.swift in Sources */,
+				D762DB622A38D8E5003C4636 /* TextField+Extension.swift in Sources */,
 				D762DB1E2A38CF79003C4636 /* SceneDelegate.swift in Sources */,
 				D762DB5E2A38D428003C4636 /* ImageLiteral.swift in Sources */,
 			);
