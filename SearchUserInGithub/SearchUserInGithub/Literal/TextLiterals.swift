@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum TextLiteral {
+enum TextLiterals {
     static let userSearchTextField: String = "유저 검색"
 }
