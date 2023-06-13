@@ -17,6 +17,7 @@
 		D762DB3F2A38CF7B003C4636 /* SearchUserInGithubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB3E2A38CF7B003C4636 /* SearchUserInGithubUITestsLaunchTests.swift */; };
 		D762DB542A38D19B003C4636 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D762DB532A38D19B003C4636 /* CombineMoya */; };
 		D762DB562A38D19B003C4636 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = D762DB552A38D19B003C4636 /* Moya */; };
+		D762DB592A38D1C2003C4636 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D762DB582A38D1C2003C4636 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D762DB562A38D19B003C4636 /* Moya in Frameworks */,
+				D762DB592A38D1C2003C4636 /* Then in Frameworks */,
 				D762DB542A38D19B003C4636 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +205,7 @@
 			packageProductDependencies = (
 				D762DB532A38D19B003C4636 /* CombineMoya */,
 				D762DB552A38D19B003C4636 /* Moya */,
+				D762DB582A38D1C2003C4636 /* Then */,
 			);
 			productName = SearchUserInGithub;
 			productReference = D762DB182A38CF79003C4636 /* SearchUserInGithub.app */;
@@ -278,6 +281,7 @@
 			mainGroup = D762DB0F2A38CF79003C4636;
 			packageReferences = (
 				D762DB522A38D19B003C4636 /* XCRemoteSwiftPackageReference "Moya" */,
+				D762DB572A38D1C2003C4636 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = D762DB192A38CF79003C4636 /* Products */;
 			projectDirPath = "";
@@ -665,6 +669,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		D762DB572A38D1C2003C4636 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -677,6 +689,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D762DB522A38D19B003C4636 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		D762DB582A38D1C2003C4636 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D762DB572A38D1C2003C4636 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
