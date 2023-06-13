@@ -23,6 +23,8 @@
 		D762DB602A38D430003C4636 /* TextLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB5F2A38D430003C4636 /* TextLiterals.swift */; };
 		D762DB622A38D8E5003C4636 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB612A38D8E5003C4636 /* TextField+Extension.swift */; };
 		D762DB642A38DAC8003C4636 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB632A38DAC8003C4636 /* UIImage+Extension.swift */; };
+		D762DB672A38E136003C4636 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB662A38E136003C4636 /* UserTableViewCell.swift */; };
+		D762DB692A38E414003C4636 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB682A38E414003C4636 /* NSObject+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		D762DB5F2A38D430003C4636 /* TextLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLiterals.swift; sourceTree = "<group>"; };
 		D762DB612A38D8E5003C4636 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		D762DB632A38DAC8003C4636 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		D762DB662A38E136003C4636 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		D762DB682A38E414003C4636 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		D762DB4D2A38CFB9003C4636 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D762DB652A38E127003C4636 /* UITableViewCell */,
 				D762DB1F2A38CF79003C4636 /* ViewController.swift */,
 			);
 			path = Views;
@@ -187,6 +192,7 @@
 			children = (
 				D762DB612A38D8E5003C4636 /* TextField+Extension.swift */,
 				D762DB632A38DAC8003C4636 /* UIImage+Extension.swift */,
+				D762DB682A38E414003C4636 /* NSObject+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +213,14 @@
 				D762DB5F2A38D430003C4636 /* TextLiterals.swift */,
 			);
 			path = Literal;
+			sourceTree = "<group>";
+		};
+		D762DB652A38E127003C4636 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D762DB662A38E136003C4636 /* UserTableViewCell.swift */,
+			);
+			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,9 +363,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D762DB5C2A38D347003C4636 /* SizeLiterals.swift in Sources */,
+				D762DB672A38E136003C4636 /* UserTableViewCell.swift in Sources */,
 				D762DB202A38CF79003C4636 /* ViewController.swift in Sources */,
 				D762DB642A38DAC8003C4636 /* UIImage+Extension.swift in Sources */,
 				D762DB602A38D430003C4636 /* TextLiterals.swift in Sources */,
+				D762DB692A38E414003C4636 /* NSObject+Extension.swift in Sources */,
 				D762DB1C2A38CF79003C4636 /* AppDelegate.swift in Sources */,
 				D762DB622A38D8E5003C4636 /* TextField+Extension.swift in Sources */,
 				D762DB1E2A38CF79003C4636 /* SceneDelegate.swift in Sources */,
