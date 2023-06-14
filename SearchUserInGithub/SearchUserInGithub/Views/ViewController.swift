@@ -30,8 +30,8 @@ final class ViewController: UIViewController {
     }
     private let userTableView: UITableView = UITableView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        $0.contentInset = UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0)
+        $0.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.className)
+        $0.separatorInset.left = 0
     }
     
     // MARK: - property
@@ -80,9 +80,15 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "ss"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else {
+            return UITableViewCell()
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 }
 
