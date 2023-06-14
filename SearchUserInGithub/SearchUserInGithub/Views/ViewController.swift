@@ -25,10 +25,6 @@ final class ViewController: UIViewController {
         $0.placeholder = TextLiterals.userSearchTextField
         $0.addPadding()
     }
-    private let searchImageView: UIImageView = UIImageView(image: ImageLiterals.searchImage).then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.tintColor = .gray
-    }
     private let userTableView: UITableView = UITableView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.className)
@@ -53,12 +49,6 @@ final class ViewController: UIViewController {
         self.userSearchTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
         self.userSearchTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -SizeLiterals.leadingTrailingPadding).isActive = true
         self.userSearchTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        self.userSearchTextField.addSubview(self.searchImageView)
-        self.searchImageView.trailingAnchor.constraint(equalTo: self.userSearchTextField.trailingAnchor, constant: -8).isActive = true
-        self.searchImageView.centerYAnchor.constraint(equalTo: self.userSearchTextField.centerYAnchor).isActive = true
-        self.searchImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        self.searchImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
         self.view.addSubview(self.userTableView)
         self.userTableView.topAnchor.constraint(equalTo: self.userSearchTextField.bottomAnchor, constant: 12).isActive = true
