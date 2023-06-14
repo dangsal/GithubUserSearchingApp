@@ -8,5 +8,10 @@
 import UIKit
 
 enum ImageLiterals {
+    
+    // Icon
     static var searchImage: UIImage { .load(systemName: "magnifyingglass") }
+    
+    // image
+    static var userDefaultProfile: UIImage { .load(systemName: "person.circle.fill") }
 }

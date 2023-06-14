@@ -15,15 +15,19 @@ final class UserTableViewCell: UITableViewCell {
     
     private let userImageView: UIImageView = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .red
+        $0.image = ImageLiterals.userDefaultProfile
+        $0.tintColor = .gray
         $0.layer.cornerRadius = 22
     }
     private let userNameLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.font = UIFont.systemFont(ofSize: 18)
         $0.text = "이성호"
     }
     private let userUrlLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.textColor = .gray
         $0.text = "shdkflsakjdfasdfasdfasdfasdf"
     }
     
@@ -44,7 +48,7 @@ final class UserTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        userImageView.image = nil
+        userImageView.image = ImageLiterals.userDefaultProfile
         userNameLabel.text = nil
         userUrlLabel.text = nil
     }
