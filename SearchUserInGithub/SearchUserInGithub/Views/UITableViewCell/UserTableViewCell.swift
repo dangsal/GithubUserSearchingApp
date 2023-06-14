@@ -51,14 +51,14 @@ final class UserTableViewCell: UITableViewCell {
     
     private func setupLayout() {
         self.contentView.addSubview(self.userImageView)
-        self.userImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        self.userImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         self.userImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         self.userImageView.widthAnchor.constraint(equalToConstant: 44).isActive = true
         self.userImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         
         self.contentView.addSubview(self.userNameLabel)
         self.userNameLabel.topAnchor.constraint(equalTo: self.userImageView.topAnchor).isActive = true
-        self.userNameLabel.leadingAnchor.constraint(equalTo: self.userImageView.trailingAnchor, constant: 8).isActive = true
+        self.userNameLabel.leadingAnchor.constraint(equalTo: self.userImageView.trailingAnchor, constant: 12).isActive = true
         self.userNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
 
         self.contentView.addSubview(self.userUrlLabel)

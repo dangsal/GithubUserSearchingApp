@@ -21,6 +21,7 @@ final class ViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.gray.cgColor
+        $0.layer.cornerRadius = 8
         $0.placeholder = TextLiterals.userSearchTextField
         $0.addPadding()
     }
@@ -88,7 +89,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 72
     }
 }
 
