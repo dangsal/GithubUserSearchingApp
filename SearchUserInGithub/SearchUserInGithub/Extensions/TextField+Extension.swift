@@ -31,4 +31,30 @@ extension UITextField {
         self.leftViewMode = .always
 
     }
+    
+    func addCustomClearButton() {
+        let image = ImageLiterals.xmark
+        let rightView: UIView = UIView(frame: CGRect(x: 0,
+                                                     y: 0,
+                                                     width: image.size.width + 10,
+                                                     height: image.size.height))
+        let clearButton: UIButton = UIButton(type: .custom).then {
+            $0.setImage(image, for: .normal)
+            $0.tintColor = .gray
+            $0.frame = CGRect(x: 0,
+                              y: 0,
+                              width: image.size.width,
+                              height: image.size.height)
+        }
+        
+        let clearButtonDidtap = UIAction { [weak self] _ in
+            self?.text = ""
+        }
+        clearButton.addAction(clearButtonDidtap, for: .touchUpInside)
+        
+        rightView.addSubview(clearButton)
+
+        self.rightView = rightView
+        rightViewMode = .whileEditing
+    }
 }

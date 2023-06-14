@@ -23,7 +23,9 @@ final class ViewController: UIViewController {
         $0.layer.borderColor = UIColor.gray.cgColor
         $0.layer.cornerRadius = 8
         $0.placeholder = TextLiterals.userSearchTextField
+        $0.returnKeyType = .search
         $0.addPadding()
+        $0.addCustomClearButton()
     }
     private let userTableView: UITableView = UITableView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
