@@ -41,6 +41,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         self.setupLayout()
         self.setupDelegation()
+        self.hideKeyboardWhenTapped()
     }
 
     // MARK: - func
