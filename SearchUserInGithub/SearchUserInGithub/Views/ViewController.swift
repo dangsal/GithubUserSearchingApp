@@ -30,12 +30,13 @@ final class ViewController: UIViewController {
     private let userTableView: UITableView = UITableView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.className)
+        $0.register(EmptyViewCell.self, forCellReuseIdentifier: EmptyViewCell.className)
         $0.separatorInset.left = 0
     }
     
     // MARK: - property
     
-    private let viewModel: ViewModel? = ViewModel()
+    private let viewModel: ViewModel = ViewModel()
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: - life cycle
@@ -84,12 +85,25 @@ final class ViewController: UIViewController {
     }
     
     private func setBindings() {
-        self.viewModel?.$users
+        self.viewModel.$users
             .receive(on: DispatchQueue.main)
-            .sink { _ in
-                self.userTableView.reloadData()
+            .sink { [weak self] _ in
+                self?.reloadTableView()
             }
-            .store(in: &cancellable)
+            .store(in: &self.cancellable)
+    }
+    
+    private func reloadTableView() {
+        self.userTableView.reloadData()
+    }
+    
+    private func configureTableView() {
+        if self.viewModel.isEmpty {
+            self.userTableView.separatorStyle = .none
+        }
+        else {
+            self.userTableView.separatorStyle = .singleLine
+        }
     }
     
     // MARK: - selector
@@ -105,19 +119,30 @@ final class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let viewModel = self.viewModel else { return 0 }
-        return viewModel.numberOfRowInSection(section)
+        if !viewModel.isEmpty {
+            return viewModel.numberOfRowInSection(section)
+        }
+        else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else {
-            return UITableViewCell()
+        self.configureTableView()
+        if !viewModel.isEmpty {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else {
+                return UITableViewCell()
+            }
+            let userViewModel = viewModel.userAtIndex(indexPath.row)
+            cell.configureUserInformation(user: userViewModel)
+            return cell
         }
-        
-        guard let viewModel = self.viewModel else { return UITableViewCell() }
-        let userViewModel = viewModel.userAtIndex(indexPath.row)
-        cell.configureUserInformation(user: userViewModel)
-        return cell
+        else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EmptyViewCell.className, for: indexPath) as? EmptyViewCell else {
+                return UITableViewCell()
+            }
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -135,10 +160,9 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = textField.text {
-            self.viewModel?.requestUser(user: text)
+        if let text = textField.text, !text.isEmpty {
+            self.viewModel.requestUser(user: text)
         }
-        
         return true
     }
 }

@@ -14,6 +14,7 @@ import Moya
 final class ViewModel {
     
     @Published var users: [User] = []
+    @Published var isEmpty: Bool = false
     
     var numberOfSections: Int {
         return 1
@@ -37,8 +38,8 @@ final class ViewModel {
             case .success(let response):
                 do {
                     let users = try response.map(SearchResult.self)
-                    print("user: ", users.items)
                     self.users = users.items
+                    self.isEmpty = users.items.isEmpty
                 } catch {
                     print("json mapping error")
                 }

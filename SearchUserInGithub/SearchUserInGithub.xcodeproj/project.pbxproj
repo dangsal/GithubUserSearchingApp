@@ -38,6 +38,7 @@
 		D799730A2A3B4C050008C6E8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973092A3B4C050008C6E8 /* UserViewModel.swift */; };
 		D79973102A3B54F30008C6E8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */; };
 		D79973122A3B55000008C6E8 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973112A3B55000008C6E8 /* ImageCacheManager.swift */; };
+		D79973152A3B5F380008C6E8 /* EmptyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973142A3B5F380008C6E8 /* EmptyViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		D79973092A3B4C050008C6E8 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		D79973112A3B55000008C6E8 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		D79973142A3B5F380008C6E8 /* EmptyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 		D762DB652A38E127003C4636 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				D79973142A3B5F380008C6E8 /* EmptyViewCell.swift */,
 				D762DB662A38E136003C4636 /* UserTableViewCell.swift */,
 			);
 			path = UITableViewCell;
@@ -405,6 +408,7 @@
 				D762DB5C2A38D347003C4636 /* SizeLiterals.swift in Sources */,
 				D762DB672A38E136003C4636 /* UserTableViewCell.swift in Sources */,
 				D79972FA2A3AA6CA0008C6E8 /* GithubAPI.swift in Sources */,
+				D79973152A3B5F380008C6E8 /* EmptyViewCell.swift in Sources */,
 				D79972F62A3A045A0008C6E8 /* GithubOAuthManager.swift in Sources */,
 				D79973002A3ADF970008C6E8 /* UserDefaultHandler.swift in Sources */,
 				D762DB202A38CF79003C4636 /* ViewController.swift in Sources */,
