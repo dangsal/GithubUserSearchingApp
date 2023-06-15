@@ -35,6 +35,8 @@ final class ViewController: UIViewController {
     
     // MARK: - property
     
+    private let viewModel: ViewModel? = ViewModel()
+    
     // MARK: - life cycle
     
     override func viewDidLoad() {
@@ -44,7 +46,6 @@ final class ViewController: UIViewController {
         self.configureUI()
         self.setupNavigationBar()
         self.hideKeyboardWhenTapped()
-        self.requestUser(user: "dangsal")
     }
 
     // MARK: - func
@@ -112,24 +113,4 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
-}
-
-extension ViewController {
-    private func requestUser(user: String) {
-        let provider = MoyaProvider<GithubAPI>()
-        
-        provider.request(.searchUsers(query: user)) { result in
-            switch result {
-            case .success(let response):
-                do {
-                    let users = try response.map(SearchResult.self)
-                    print("user: ", users.items)
-                } catch {
-                    print("json mapping error")
-                }
-            case .failure(let error):
-                print("network error", error)
-            }
-        }
-    }
 }

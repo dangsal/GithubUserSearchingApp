@@ -34,6 +34,8 @@
 		D79973022A3AE6F00008C6E8 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973012A3AE6EF0008C6E8 /* MyPageViewController.swift */; };
 		D79973042A3AF6780008C6E8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973032A3AF6780008C6E8 /* User.swift */; };
 		D79973062A3B427C0008C6E8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973052A3B427C0008C6E8 /* SearchResult.swift */; };
+		D79973082A3B47170008C6E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973072A3B47170008C6E8 /* ViewModel.swift */; };
+		D799730A2A3B4C050008C6E8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973092A3B4C050008C6E8 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		D79973012A3AE6EF0008C6E8 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		D79973032A3AF6780008C6E8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D79973052A3B427C0008C6E8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D79973072A3B47170008C6E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D79973092A3B4C050008C6E8 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 		D762DB4C2A38CFAF003C4636 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D79973072A3B47170008C6E8 /* ViewModel.swift */,
+				D79973092A3B4C050008C6E8 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				D79972F42A3993050008C6E8 /* UIViewController+Extension.swift in Sources */,
 				D762DB642A38DAC8003C4636 /* UIImage+Extension.swift in Sources */,
 				D79973062A3B427C0008C6E8 /* SearchResult.swift in Sources */,
+				D79973082A3B47170008C6E8 /* ViewModel.swift in Sources */,
 				D762DB602A38D430003C4636 /* TextLiterals.swift in Sources */,
 				D79973022A3AE6F00008C6E8 /* MyPageViewController.swift in Sources */,
 				D762DB692A38E414003C4636 /* NSObject+Extension.swift in Sources */,
@@ -407,6 +414,7 @@
 				D79973042A3AF6780008C6E8 /* User.swift in Sources */,
 				D762DB622A38D8E5003C4636 /* TextField+Extension.swift in Sources */,
 				D762DB1E2A38CF79003C4636 /* SceneDelegate.swift in Sources */,
+				D799730A2A3B4C050008C6E8 /* UserViewModel.swift in Sources */,
 				D762DB5E2A38D428003C4636 /* ImageLiterals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
