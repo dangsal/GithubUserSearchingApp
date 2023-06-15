@@ -16,9 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = UINavigationController(rootViewController: LoginViewController())
-        viewController.view.backgroundColor = .white
-        window?.rootViewController = viewController
+        if UserDefaultStorage.isLogin {
+            let viewController = UINavigationController(rootViewController: ViewController())
+            window?.rootViewController = viewController
+        }
+        else {
+            let viewController = UINavigationController(rootViewController: LoginViewController())
+            window?.rootViewController = viewController
+            
+        }
         window?.makeKeyAndVisible()
     }
     
@@ -32,6 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 DispatchQueue.main.async {
                     self.pushViewController()
                 }
+                UserDefaultHandler.setIsLogin(isLogin: true)
             }
         }
     }

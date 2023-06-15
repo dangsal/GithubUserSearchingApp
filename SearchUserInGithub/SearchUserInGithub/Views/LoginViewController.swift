@@ -26,6 +26,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.setupLayout()
         self.setupButtonAction()
+        self.configureUI()
     }
     
     // MARK: - func
@@ -43,6 +44,11 @@ final class LoginViewController: UIViewController {
             self?.requestOAuthCode()
         }
         self.loginButton.addAction(loginButtonDidTapAction, for: .touchUpInside)
+    }
+    
+    private func configureUI() {
+        self.view.backgroundColor = .white
+        self.navigationItem.hidesBackButton = true
     }
     
     private func requestOAuthCode() {
