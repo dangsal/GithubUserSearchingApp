@@ -36,6 +36,8 @@
 		D79973062A3B427C0008C6E8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973052A3B427C0008C6E8 /* SearchResult.swift */; };
 		D79973082A3B47170008C6E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973072A3B47170008C6E8 /* ViewModel.swift */; };
 		D799730A2A3B4C050008C6E8 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973092A3B4C050008C6E8 /* UserViewModel.swift */; };
+		D79973102A3B54F30008C6E8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */; };
+		D79973122A3B55000008C6E8 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973112A3B55000008C6E8 /* ImageCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		D79973052A3B427C0008C6E8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		D79973072A3B47170008C6E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D79973092A3B4C050008C6E8 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		D79973112A3B55000008C6E8 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 				D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */,
 				D79972FD2A3ADF850008C6E8 /* UserDefatultStorage.swift */,
 				D79972FF2A3ADF970008C6E8 /* UserDefaultHandler.swift */,
+				D79973112A3B55000008C6E8 /* ImageCacheManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				D762DB632A38DAC8003C4636 /* UIImage+Extension.swift */,
 				D762DB682A38E414003C4636 /* NSObject+Extension.swift */,
 				D79972F32A3993050008C6E8 /* UIViewController+Extension.swift */,
+				D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,9 +419,11 @@
 				D762DB1C2A38CF79003C4636 /* AppDelegate.swift in Sources */,
 				D79973042A3AF6780008C6E8 /* User.swift in Sources */,
 				D762DB622A38D8E5003C4636 /* TextField+Extension.swift in Sources */,
+				D79973102A3B54F30008C6E8 /* UIImageView+Extension.swift in Sources */,
 				D762DB1E2A38CF79003C4636 /* SceneDelegate.swift in Sources */,
 				D799730A2A3B4C050008C6E8 /* UserViewModel.swift in Sources */,
 				D762DB5E2A38D428003C4636 /* ImageLiterals.swift in Sources */,
+				D79973122A3B55000008C6E8 /* ImageCacheManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

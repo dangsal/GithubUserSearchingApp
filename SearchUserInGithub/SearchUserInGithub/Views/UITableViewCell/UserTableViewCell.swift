@@ -71,7 +71,12 @@ final class UserTableViewCell: UITableViewCell {
         self.userUrlLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
     
-    func configureUserInformation(user: User) {
+    func configureUserInformation(user: UserViewModel) {
+        self.userNameLabel.text = user.userName
+        self.userUrlLabel.text = user.userUrl
         
+        if let userImage = user.userImage {
+            self.userImageView.load(from: userImage)
+        }
     }
 }

@@ -36,6 +36,7 @@ final class ViewController: UIViewController {
     // MARK: - property
     
     private let viewModel: ViewModel? = ViewModel()
+    private var cancellable = Set<AnyCancellable>()
     
     // MARK: - life cycle
     
@@ -45,6 +46,7 @@ final class ViewController: UIViewController {
         self.setupDelegation()
         self.configureUI()
         self.setupNavigationBar()
+        self.setBindings()
         self.hideKeyboardWhenTapped()
     }
 
@@ -67,6 +69,7 @@ final class ViewController: UIViewController {
     private func setupDelegation() {
         self.userTableView.dataSource = self
         self.userTableView.delegate = self
+        self.userSearchTextField.delegate = self
     }
     
     private func configureUI() {
@@ -78,6 +81,15 @@ final class ViewController: UIViewController {
         let rightButton = UIBarButtonItem(image: ImageLiterals.profile, style: .plain, target: self, action: #selector(didTapMyPageButton))
         rightButton.tintColor = .systemBlue
         navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    private func setBindings() {
+        self.viewModel?.$users
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.userTableView.reloadData()
+            }
+            .store(in: &cancellable)
     }
     
     // MARK: - selector
@@ -93,7 +105,8 @@ final class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        guard let viewModel = self.viewModel else { return 0 }
+        return viewModel.numberOfRowInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -101,6 +114,9 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        guard let viewModel = self.viewModel else { return UITableViewCell() }
+        let userViewModel = viewModel.userAtIndex(indexPath.row)
+        cell.configureUserInformation(user: userViewModel)
         return cell
     }
     
@@ -113,4 +129,16 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text {
+            self.viewModel?.requestUser(user: text)
+        }
+        
+        return true
+    }
 }
