@@ -41,19 +41,25 @@ extension UITextField {
         let clearButton: UIButton = UIButton(type: .custom).then {
             $0.setImage(image, for: .normal)
             $0.tintColor = .gray
-            $0.frame = CGRect(x: 0,
-                              y: 0,
-                              width: image.size.width,
-                              height: image.size.height)
+            $0.isHidden = true
+            $0.frame = CGRect(x: -15,
+                              y: -10,
+                              width: image.size.width + 20,
+                              height: image.size.height + 20)
         }
         
         let clearButtonDidtap = UIAction { [weak self] _ in
             self?.text = ""
         }
+        let textDidChange = UIAction { [weak self] _ in
+            self?.rightView?.subviews.first?.isHidden = self?.text?.isEmpty ?? true
+        }
+        
         clearButton.addAction(clearButtonDidtap, for: .touchUpInside)
         
+        self.addAction(textDidChange, for: .editingChanged)
         rightView.addSubview(clearButton)
-
+        
         self.rightView = rightView
         rightViewMode = .whileEditing
     }
