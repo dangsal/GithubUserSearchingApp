@@ -17,7 +17,8 @@ final class UserTableViewCell: UITableViewCell {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = ImageLiterals.userDefaultProfile
         $0.tintColor = .gray
-        $0.layer.cornerRadius = 22
+        $0.layer.cornerRadius = 25
+        $0.layer.masksToBounds = true
     }
     private let userNameLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -57,8 +58,8 @@ final class UserTableViewCell: UITableViewCell {
         self.contentView.addSubview(self.userImageView)
         self.userImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         self.userImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        self.userImageView.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        self.userImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        self.userImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        self.userImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         self.contentView.addSubview(self.userNameLabel)
         self.userNameLabel.topAnchor.constraint(equalTo: self.userImageView.topAnchor).isActive = true
