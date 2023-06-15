@@ -21,7 +21,7 @@ extension GithubAPI: TargetType {
     var path: String {
         switch self {
         case .fetchAccessToken:
-            return "login/oauth/access_token"
+            return "/login/oauth/access_token"
         }
     }
     
@@ -46,6 +46,6 @@ extension GithubAPI: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json"]
+        return ["Accept": "application/json"]
     }
 }
