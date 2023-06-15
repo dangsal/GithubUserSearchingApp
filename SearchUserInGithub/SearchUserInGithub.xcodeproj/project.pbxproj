@@ -28,6 +28,7 @@
 		D79972F42A3993050008C6E8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972F32A3993050008C6E8 /* UIViewController+Extension.swift */; };
 		D79972F62A3A045A0008C6E8 /* GithubOAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */; };
 		D79972FA2A3AA6CA0008C6E8 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */; };
+		D79972FC2A3AD97C0008C6E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972FB2A3AD97C0008C6E8 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		D79972F32A3993050008C6E8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubOAuthManager.swift; sourceTree = "<group>"; };
 		D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		D79972FB2A3AD97C0008C6E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				D762DB652A38E127003C4636 /* UITableViewCell */,
 				D762DB1F2A38CF79003C4636 /* ViewController.swift */,
+				D79972FB2A3AD97C0008C6E8 /* LoginViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79972FC2A3AD97C0008C6E8 /* LoginViewController.swift in Sources */,
 				D762DB5C2A38D347003C4636 /* SizeLiterals.swift in Sources */,
 				D762DB672A38E136003C4636 /* UserTableViewCell.swift in Sources */,
 				D79972FA2A3AA6CA0008C6E8 /* GithubAPI.swift in Sources */,

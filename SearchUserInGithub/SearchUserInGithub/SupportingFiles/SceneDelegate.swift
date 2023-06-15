@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
+        let viewController = UINavigationController(rootViewController: LoginViewController())
         viewController.view.backgroundColor = .white
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
@@ -29,6 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("code:", code)
             GithubOAuthManager.shared.requestAccessToken(with: code) { result in
                 print(result)
+                DispatchQueue.main.async {
+                    self.pushViewController()
+                }
             }
         }
     }
@@ -43,6 +46,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) { }
 
-
+    private func pushViewController() {
+        let viewController = ViewController()
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            navigationController.pushViewController(viewController, animated: true)
+        }
+    }
 }
 

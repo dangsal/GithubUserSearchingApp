@@ -49,8 +49,6 @@ extension UITextField {
         
         let clearButtonDidtap = UIAction { [weak self] _ in
             self?.text = ""
-            let apiManager = GithubOAuthManager.shared
-//            apiManager.requestAuthCode()
         }
         clearButton.addAction(clearButtonDidtap, for: .touchUpInside)
         
