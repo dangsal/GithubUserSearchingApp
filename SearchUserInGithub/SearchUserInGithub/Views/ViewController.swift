@@ -82,7 +82,8 @@ final class ViewController: UIViewController {
     
     @objc
     private func didTapMyPageButton() {
-        
+        let viewController = MyPageViewController()
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

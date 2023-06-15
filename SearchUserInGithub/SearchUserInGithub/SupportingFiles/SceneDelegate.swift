@@ -52,12 +52,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) { }
 
     func sceneDidEnterBackground(_ scene: UIScene) { }
+}
 
+extension SceneDelegate {
     private func pushViewController() {
         let viewController = ViewController()
         if let navigationController = self.window?.rootViewController as? UINavigationController {
             navigationController.pushViewController(viewController, animated: true)
         }
     }
+    
+    func logout() {
+        self.clearUserDefaultData()
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+    }
+    
+    private func clearUserDefaultData() {
+        UserDefaultHandler.clearAllData()
+    }
 }
-
