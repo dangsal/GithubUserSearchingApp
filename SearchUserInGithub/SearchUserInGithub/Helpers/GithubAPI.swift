@@ -16,7 +16,13 @@ enum GithubAPI {
 
 extension GithubAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "https://github.com")!
+        switch self {
+        case .fetchAccessToken:
+            return URL(string: "https://github.com")!
+        case .searchUsers:
+            return URL(string: "https://api.github.com")!
+        }
+        
     }
     
     var path: String {
@@ -61,7 +67,9 @@ extension GithubAPI: TargetType {
         case .fetchAccessToken:
             return ["Accept": "application/json"]
         case .searchUsers:
-            return nil
+            return ["Accept": "application/vnd.github+json",
+                    "Authorization": "Bearer \(UserDefaultStorage.accessToken)"
+                    ]
         }
     }
 }

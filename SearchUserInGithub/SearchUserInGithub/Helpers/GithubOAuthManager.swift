@@ -39,6 +39,7 @@ final class GithubOAuthManager {
             case .success(let response):
                 do {
                     let accessToken = try response.mapString(atKeyPath: "access_token")
+                    UserDefaultHandler.setAccessToken(accessToken: accessToken)
                     completion(.success(accessToken))
                 } catch {
                     completion(.failure(error))

@@ -75,7 +75,3 @@ final class UserTableViewCell: UITableViewCell {
         
     }
 }
-
-struct User {
-    
-}

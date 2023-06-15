@@ -9,11 +9,16 @@ import Foundation
 
 enum DataKeys: String, CaseIterable {
     case isLogin = "isLogin"
+    case accessToken = "accessToken"
 }
 
 struct UserDefaultStorage {
     static var isLogin: Bool {
         return UserData<Bool>.getValue(forKey: .isLogin) ?? false
+    }
+    
+    static var accessToken: String {
+        return UserData<String>.getValue(forKey: .accessToken) ?? ""
     }
 }
 

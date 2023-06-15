@@ -34,7 +34,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("url: ", url)
             print("code:", code)
             GithubOAuthManager.shared.requestAccessToken(with: code) { result in
-                print(result)
                 DispatchQueue.main.async {
                     self.pushViewController()
                 }
@@ -64,6 +63,8 @@ extension SceneDelegate {
     
     func logout() {
         self.clearUserDefaultData()
+        print("UserDefaultStorage.isLogin: ", UserDefaultStorage.isLogin)
+        print("UserDefaultStorage.accessToken", UserDefaultStorage.accessToken)
         window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
     }
     

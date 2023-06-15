@@ -15,4 +15,8 @@ struct UserDefaultHandler {
     static func setIsLogin(isLogin: Bool) {
         UserData.setValue(isLogin, forKey: .isLogin)
     }
+    
+    static func setAccessToken(accessToken: String) {
+        UserData.setValue(accessToken, forKey: .accessToken)
+    }
 }
