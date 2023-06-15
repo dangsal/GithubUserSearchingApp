@@ -11,7 +11,7 @@ import Moya
 
 enum GithubAPI {
     case fetchAccessToken(clientId: String, clientSecret: String, code: String)
-    case searchUsers(query: String)
+    case searchUsers(query: String, page: Int)
 }
 
 extension GithubAPI: TargetType {
@@ -53,9 +53,10 @@ extension GithubAPI: TargetType {
                 ]
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
-        case .searchUsers(let query):
+        case .searchUsers(let query, let page):
             let parameters: [String: Any] = [
-                "q": query
+                "q": query,
+                "page": page
                 ]
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)

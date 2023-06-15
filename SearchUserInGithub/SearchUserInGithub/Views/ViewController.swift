@@ -150,6 +150,13 @@ extension ViewController: UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastRowIndex = self.viewModel.users.count - 1
+        if indexPath.row == lastRowIndex && indexPath.row != 0 && !self.viewModel.isLoading {
+            self.viewModel.requestNextPage()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
     }
@@ -170,9 +177,12 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let page = self.viewModel.currentPage
         if let text = textField.text, !text.isEmpty {
-            self.viewModel.requestUser(user: text)
+            self.viewModel.name = text
+            self.viewModel.requestUser(user: text, page: page)
         }
+        textField.resignFirstResponder()
         return true
     }
 }

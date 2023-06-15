@@ -15,6 +15,9 @@ final class ViewModel {
     
     @Published var users: [User] = []
     @Published var isEmpty: Bool = false
+    var currentPage: Int = 1
+    var isLoading: Bool = false
+    var name: String = ""
     
     var numberOfSections: Int {
         return 1
@@ -37,15 +40,20 @@ final class ViewModel {
         return URL(string: user.url)
     }
     
-    func requestUser(user: String) {
+    func requestUser(user: String, page: Int) {
         let provider = MoyaProvider<GithubAPI>()
         
-        provider.request(.searchUsers(query: user)) { result in
+        provider.request(.searchUsers(query: user, page: page)) { result in
             switch result {
             case .success(let response):
                 do {
                     let users = try response.map(SearchResult.self)
-                    self.users = users.items
+                    if page == 1 {
+                        self.users = users.items
+                    }
+                    else {
+                        self.users += users.items
+                    }
                     self.isEmpty = users.items.isEmpty
                 } catch {
                     print("json mapping error")
@@ -56,4 +64,10 @@ final class ViewModel {
         }
     }
     
+    func requestNextPage() {
+        self.isLoading = true
+        let nextPage = currentPage + 1
+        requestUser(user: self.name, page: nextPage)
+        self.isLoading = false
+    }
 }
