@@ -13,8 +13,14 @@ import Moya
 final class GithubOAuthManager {
     static let shared = GithubOAuthManager()
     
+    private let provider: MoyaProvider<GithubAPI>
     private let clientId = ""
     private let clientSecret = ""
+    private let scope = "user"
+    
+    private init() {
+        self.provider = MoyaProvider<GithubAPI>()
+    }
     
     func requestAuthCode() {
         let scope = "user"
@@ -25,5 +31,21 @@ final class GithubOAuthManager {
         }
     }
     
-    
+    func requestAccessToken(with code: String, completion: @escaping(Result<String, Error>) -> Void) {
+        let target = GithubAPI.fetchAccessToken(clientId: clientId, clientSecret: clientSecret, code: code)
+        
+        provider.request(target) {result in
+            switch result {
+            case .success(let response):
+                do {
+                    let accessToken = try response.mapString(atKeyPath: "access_token")
+                    completion(.success(accessToken))
+                } catch {
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

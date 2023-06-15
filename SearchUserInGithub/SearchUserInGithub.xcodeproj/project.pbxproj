@@ -27,6 +27,7 @@
 		D762DB692A38E414003C4636 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB682A38E414003C4636 /* NSObject+Extension.swift */; };
 		D79972F42A3993050008C6E8 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972F32A3993050008C6E8 /* UIViewController+Extension.swift */; };
 		D79972F62A3A045A0008C6E8 /* GithubOAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */; };
+		D79972FA2A3AA6CA0008C6E8 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		D762DB682A38E414003C4636 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		D79972F32A3993050008C6E8 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubOAuthManager.swift; sourceTree = "<group>"; };
+		D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */,
+				D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			files = (
 				D762DB5C2A38D347003C4636 /* SizeLiterals.swift in Sources */,
 				D762DB672A38E136003C4636 /* UserTableViewCell.swift in Sources */,
+				D79972FA2A3AA6CA0008C6E8 /* GithubAPI.swift in Sources */,
 				D79972F62A3A045A0008C6E8 /* GithubOAuthManager.swift in Sources */,
 				D762DB202A38CF79003C4636 /* ViewController.swift in Sources */,
 				D79972F42A3993050008C6E8 /* UIViewController+Extension.swift in Sources */,
