@@ -42,6 +42,7 @@ final class ViewController: UIViewController {
         self.setupLayout()
         self.setupDelegation()
         self.configureUI()
+        self.setupNavigationBar()
         self.hideKeyboardWhenTapped()
     }
 
@@ -69,6 +70,19 @@ final class ViewController: UIViewController {
     private func configureUI() {
         self.view.backgroundColor = .white
         self.navigationItem.hidesBackButton = true
+    }
+    
+    private func setupNavigationBar() {
+        let rightButton = UIBarButtonItem(image: ImageLiterals.profile, style: .plain, target: self, action: #selector(didTapMyPageButton))
+        rightButton.tintColor = .systemBlue
+        navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    // MARK: - selector
+    
+    @objc
+    private func didTapMyPageButton() {
+        
     }
 }
 
