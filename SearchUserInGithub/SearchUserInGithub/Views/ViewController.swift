@@ -41,6 +41,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         self.setupLayout()
         self.setupDelegation()
+        self.configureUI()
         self.hideKeyboardWhenTapped()
     }
 
@@ -63,6 +64,11 @@ final class ViewController: UIViewController {
     private func setupDelegation() {
         self.userTableView.dataSource = self
         self.userTableView.delegate = self
+    }
+    
+    private func configureUI() {
+        self.view.backgroundColor = .white
+        self.navigationItem.hidesBackButton = true
     }
 }
 
