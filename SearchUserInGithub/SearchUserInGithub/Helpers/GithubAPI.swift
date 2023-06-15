@@ -11,6 +11,7 @@ import Moya
 
 enum GithubAPI {
     case fetchAccessToken(clientId: String, clientSecret: String, code: String)
+    case searchUsers(query: String)
 }
 
 extension GithubAPI: TargetType {
@@ -22,6 +23,8 @@ extension GithubAPI: TargetType {
         switch self {
         case .fetchAccessToken:
             return "/login/oauth/access_token"
+        case .searchUsers:
+            return "/search/users"
         }
     }
     
@@ -29,6 +32,8 @@ extension GithubAPI: TargetType {
         switch self {
         case .fetchAccessToken:
             return .post
+        case .searchUsers:
+            return .get
         }
     }
     
@@ -42,10 +47,21 @@ extension GithubAPI: TargetType {
                 ]
             
             return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
+        case .searchUsers(let query):
+            let parameters: [String: Any] = [
+                "q": query
+                ]
+            
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
-        return ["Accept": "application/json"]
+        switch self {
+        case .fetchAccessToken:
+            return ["Accept": "application/json"]
+        case .searchUsers:
+            return nil
+        }
     }
 }
