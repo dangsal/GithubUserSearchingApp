@@ -106,6 +106,11 @@ final class ViewController: UIViewController {
         }
     }
     
+    private func pushWebViewController(url: URL) {
+        let viewController = WebViewController(url: url)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // MARK: - selector
     
     @objc
@@ -153,7 +158,12 @@ extension ViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let url = self.viewModel.userUrlAtIndex(indexPath.row) else { return }
+        
+        self.pushWebViewController(url: url)
+    }
 }
 
 // MARK: - UITextFieldDelegate

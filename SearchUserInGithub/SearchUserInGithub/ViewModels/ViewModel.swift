@@ -30,6 +30,13 @@ final class ViewModel {
         return UserViewModel(user)
     }
     
+    func userUrlAtIndex(_ index: Int) -> URL? {
+        guard index < users.count else { return nil }
+        let user = self.users[index]
+        
+        return URL(string: user.url)
+    }
+    
     func requestUser(user: String) {
         let provider = MoyaProvider<GithubAPI>()
         

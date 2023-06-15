@@ -13,7 +13,8 @@ struct User: Decodable {
     let url: String
     
     enum CodingKeys: String, CodingKey {
-        case login, url
+        case login
+        case url = "html_url"
         case avatarURL = "avatar_url"
     }
 }

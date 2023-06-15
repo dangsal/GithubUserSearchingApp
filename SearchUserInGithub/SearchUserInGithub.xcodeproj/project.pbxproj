@@ -39,6 +39,7 @@
 		D79973102A3B54F30008C6E8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */; };
 		D79973122A3B55000008C6E8 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973112A3B55000008C6E8 /* ImageCacheManager.swift */; };
 		D79973152A3B5F380008C6E8 /* EmptyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973142A3B5F380008C6E8 /* EmptyViewCell.swift */; };
+		D79973172A3B72BA0008C6E8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79973162A3B72BA0008C6E8 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D799730F2A3B54F30008C6E8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		D79973112A3B55000008C6E8 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		D79973142A3B5F380008C6E8 /* EmptyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewCell.swift; sourceTree = "<group>"; };
+		D79973162A3B72BA0008C6E8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				D762DB1F2A38CF79003C4636 /* ViewController.swift */,
 				D79972FB2A3AD97C0008C6E8 /* LoginViewController.swift */,
 				D79973012A3AE6EF0008C6E8 /* MyPageViewController.swift */,
+				D79973162A3B72BA0008C6E8 /* WebViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				D79973062A3B427C0008C6E8 /* SearchResult.swift in Sources */,
 				D79973082A3B47170008C6E8 /* ViewModel.swift in Sources */,
 				D762DB602A38D430003C4636 /* TextLiterals.swift in Sources */,
+				D79973172A3B72BA0008C6E8 /* WebViewController.swift in Sources */,
 				D79973022A3AE6F00008C6E8 /* MyPageViewController.swift in Sources */,
 				D762DB692A38E414003C4636 /* NSObject+Extension.swift in Sources */,
 				D79972FE2A3ADF850008C6E8 /* UserDefatultStorage.swift in Sources */,
