@@ -18,6 +18,7 @@ final class ViewModel {
     var currentPage: Int = 1
     var isLoading: Bool = false
     var name: String = ""
+    var totalCount: Int = 0
     
     var numberOfSections: Int {
         return 1
@@ -42,7 +43,7 @@ final class ViewModel {
     
     func requestUser(user: String, page: Int) {
         let provider = MoyaProvider<GithubAPI>()
-        
+        self.isLoading = true
         provider.request(.searchUsers(query: user, page: page)) { result in
             switch result {
             case .success(let response):
@@ -50,6 +51,7 @@ final class ViewModel {
                     let users = try response.map(SearchResult.self)
                     if page == 1 {
                         self.users = users.items
+                        self.totalCount = users.totalCount
                         self.isLoading = false
                     }
                     else {
@@ -67,9 +69,11 @@ final class ViewModel {
     }
     
     func requestNextPage() {
-        self.isLoading = true
-        self.increaseCurrentPage()
-        self.requestUser(user: self.name, page: currentPage)
+        if currentPage <= self.totalCount / 30 {
+            self.increaseCurrentPage()
+            self.requestUser(user: self.name, page: self.currentPage)
+        }
+        return 
     }
     
     func resetCurrentPage() {
