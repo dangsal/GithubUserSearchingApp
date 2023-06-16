@@ -16,7 +16,7 @@ final class LoginViewController: UIViewController {
     private let loginButton: UIButton = UIButton(type: .system).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("깃 허브로 로그인", for: .normal)
-        $0.backgroundColor = .black
+        $0.backgroundColor = .systemGray
         $0.tintColor = .white
     }
     
@@ -47,12 +47,31 @@ final class LoginViewController: UIViewController {
     }
     
     private func configureUI() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBackground
         self.navigationItem.hidesBackButton = true
+        self.configureByUserInterfaceStyle()
     }
     
     private func requestOAuthCode() {
         let apiManager = GithubOAuthManager.shared
         apiManager.requestAuthCode()
+    }
+    
+    private func configureByUserInterfaceStyle() {
+        switch self.traitCollection.userInterfaceStyle {
+        case .light:
+            self.loginButton.backgroundColor = .black
+            self.loginButton.tintColor = .white
+        case .dark:
+            self.loginButton.backgroundColor = .white
+            self.loginButton.tintColor = .black
+        default:
+            return
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.configureByUserInterfaceStyle()
     }
 }
