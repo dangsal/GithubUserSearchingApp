@@ -92,6 +92,13 @@ final class SearchUserViewController: UIViewController {
                 self?.reloadTableView()
             }
             .store(in: &self.cancellable)
+        
+        self.searchUserViewModel.errorMessage
+            .receive(on: DispatchQueue.main)
+            .sink { message in
+                print(message)
+            }
+            .store(in: &self.cancellable)
     }
     
     private func reloadTableView() {

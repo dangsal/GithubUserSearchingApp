@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+import CombineMoya
 import Moya
 
 final class SearchUserViewModel {
@@ -19,7 +20,10 @@ final class SearchUserViewModel {
     var currentPage: Int = 1
     var isLoading: Bool = false
     var name: String = ""
+    let errorMessage = PassthroughSubject<String, Never>()
     private var totalCount: Int = 0
+    private var cancellables = Set<AnyCancellable>()
+    private let provider = MoyaProvider<GithubAPI>()
     
     // MARK: - func
     
@@ -63,29 +67,29 @@ final class SearchUserViewModel {
     // MARK: - network
     
     func requestUser(user: String, page: Int) {
-        let provider = MoyaProvider<GithubAPI>()
         self.isLoading = true
-        provider.request(.searchUsers(query: user, page: page)) { result in
-            switch result {
-            case .success(let response):
-                do {
-                    let response = try response.map(SearchResult.self)
-                    if page == 1 {
-                        self.users = response.items
-                        self.totalCount = response.totalCount
-                        self.isLoading = false
-                    }
-                    else {
-                        self.users += response.items
-                        self.isLoading = false
-                    }
-                    self.isEmpty = response.items.isEmpty
-                } catch {
-                    print("json mapping error")
+        self.provider.requestPublisher(.searchUsers(query: user, page: page))
+            .map(SearchResult.self)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    self.errorMessage.send(error.localizedDescription)
+                case .finished:
+                    break
                 }
-            case .failure(let error):
-                print("network error", error)
+            } receiveValue: { response in
+                if page == 1 {
+                    self.users = response.items
+                    self.totalCount = response.totalCount
+                    self.isLoading = false
+                }
+                else {
+                    self.users += response.items
+                    self.isLoading = false
+                }
+                self.isEmpty = response.items.isEmpty
             }
-        }
+            .store(in: &self.cancellables)
     }
 }
