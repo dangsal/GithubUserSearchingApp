@@ -33,8 +33,9 @@ final class LoginViewController: UIViewController {
         self.view.addSubview(self.loginButton)
         self.loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.loginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        self.loginButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        self.loginButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
+        self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -SizeLiterals.leadingTrailingPadding).isActive = true
+        self.loginButton.heightAnchor.constraint(equalToConstant: SizeLiterals.loginButtonHeight).isActive = true
     }
     
     private func setupButtonAction() {

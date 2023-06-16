@@ -35,7 +35,7 @@ final class EmptyViewCell: UITableViewCell {
     
     private func setupLayout() {
         self.addSubview(self.emptyLabel)
-        self.emptyLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20).isActive = true
+        self.emptyLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: SizeLiterals.topPadding).isActive = true
         self.emptyLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
 }

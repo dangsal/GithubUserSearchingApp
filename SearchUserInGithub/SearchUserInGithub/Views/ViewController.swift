@@ -58,10 +58,10 @@ final class ViewController: UIViewController {
         self.userSearchTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: SizeLiterals.topPadding).isActive = true
         self.userSearchTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
         self.userSearchTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -SizeLiterals.leadingTrailingPadding).isActive = true
-        self.userSearchTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
+         self.userSearchTextField.heightAnchor.constraint(equalToConstant: SizeLiterals.userSearchTextFieldHeight).isActive = true
         
         self.view.addSubview(self.userTableView)
-        self.userTableView.topAnchor.constraint(equalTo: self.userSearchTextField.bottomAnchor, constant: 12).isActive = true
+         self.userTableView.topAnchor.constraint(equalTo: self.userSearchTextField.bottomAnchor, constant: SizeLiterals.padding).isActive = true
         self.userTableView.leadingAnchor.constraint(equalTo: self.userSearchTextField.leadingAnchor).isActive = true
         self.userTableView.trailingAnchor.constraint(equalTo: self.userSearchTextField.trailingAnchor).isActive = true
         self.userTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -163,7 +163,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 72
+        return SizeLiterals.tableViewCellHight
     }
 }
 
