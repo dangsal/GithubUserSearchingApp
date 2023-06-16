@@ -53,7 +53,27 @@ final class MyPageViewController: UIViewController {
         self.logoutButton.addAction(logoutButtonDidTapAction, for: .touchUpInside)
     }
     
+    
     private func configureUI() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .systemBackground
+        self.configureByUserInterfaceStyle()
+    }
+    
+    private func configureByUserInterfaceStyle() {
+        switch self.traitCollection.userInterfaceStyle {
+        case .light:
+            self.logoutButton.backgroundColor = .black
+            self.logoutButton.tintColor = .white
+        case .dark:
+            self.logoutButton.backgroundColor = .white
+            self.logoutButton.tintColor = .black
+        default:
+            return
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.configureByUserInterfaceStyle()
     }
 }

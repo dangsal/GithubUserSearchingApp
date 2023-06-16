@@ -16,8 +16,6 @@ final class LoginViewController: UIViewController {
     private let loginButton: UIButton = UIButton(type: .system).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("깃 허브로 로그인", for: .normal)
-        $0.backgroundColor = .systemGray
-        $0.tintColor = .white
     }
     
     // MARK: - life cycle
