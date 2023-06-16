@@ -64,9 +64,11 @@ final class MyPageViewController: UIViewController {
         case .light:
             self.logoutButton.backgroundColor = .black
             self.logoutButton.tintColor = .white
+            self.navigationController?.navigationBar.tintColor = .black
         case .dark:
             self.logoutButton.backgroundColor = .white
             self.logoutButton.tintColor = .black
+            self.navigationController?.navigationBar.tintColor = .white
         default:
             return
         }
