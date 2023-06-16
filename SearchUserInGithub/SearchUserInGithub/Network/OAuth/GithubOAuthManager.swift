@@ -14,9 +14,8 @@ final class GithubOAuthManager {
     static let shared = GithubOAuthManager()
     
     private let provider: MoyaProvider<GithubAPI>
-    //FIXME: 값 숨길것
-    private let clientId = "9599314b3ce229888c5f"
-    private let clientSecret = "81ee9a3f84c3b3853ef419802a9f7274c2db33a6"
+    private let clientId = Bundle.main.clientId
+    private let clientSecret = Bundle.main.clientSecret
     private let scope = "user"
     
     private init() {
