@@ -44,17 +44,17 @@ final class SearchUserViewModel {
             switch result {
             case .success(let response):
                 do {
-                    let users = try response.map(SearchResult.self)
+                    let response = try response.map(SearchResult.self)
                     if page == 1 {
-                        self.users = users.items
-                        self.totalCount = users.totalCount
+                        self.users = response.items
+                        self.totalCount = response.totalCount
                         self.isLoading = false
                     }
                     else {
-                        self.users += users.items
+                        self.users += response.items
                         self.isLoading = false
                     }
-                    self.isEmpty = users.items.isEmpty
+                    self.isEmpty = response.items.isEmpty
                 } catch {
                     print("json mapping error")
                 }

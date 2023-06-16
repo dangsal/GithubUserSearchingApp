@@ -13,7 +13,7 @@ import Moya
 import Then
 
 
-final class ViewController: UIViewController {
+final class SearchUserViewController: UIViewController {
     
     // MARK: - ui component
     
@@ -36,7 +36,7 @@ final class ViewController: UIViewController {
     
     // MARK: - property
     
-    private let viewModel: ViewModel = ViewModel()
+    private let searchUserViewModel: SearchUserViewModel = SearchUserViewModel()
     private var cancellable = Set<AnyCancellable>()
     
     // MARK: - life cycle
@@ -85,7 +85,7 @@ final class ViewController: UIViewController {
     }
     
     private func setBindings() {
-        self.viewModel.$users
+        self.searchUserViewModel.$users
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.reloadTableView()
@@ -98,7 +98,7 @@ final class ViewController: UIViewController {
     }
     
     private func configureTableView() {
-        if self.viewModel.isEmpty {
+        if self.searchUserViewModel.isEmpty {
             self.userTableView.separatorStyle = .none
         }
         else {
@@ -127,10 +127,10 @@ final class ViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension ViewController: UITableViewDataSource {
+extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !viewModel.isEmpty {
-            return viewModel.numberOfRowInSection(section)
+        if !searchUserViewModel.isEmpty {
+            return searchUserViewModel.numberOfRowInSection(section)
         }
         else {
             return 1
@@ -139,11 +139,11 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.configureTableView()
-        if !viewModel.isEmpty {
+        if !searchUserViewModel.isEmpty {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else {
                 return UITableViewCell()
             }
-            let userViewModel = viewModel.userAtIndex(indexPath.row)
+            let userViewModel = searchUserViewModel.userAtIndex(indexPath.row)
             cell.configureUserInformation(user: userViewModel)
             return cell
         }
@@ -156,9 +156,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastRowIndex = self.viewModel.users.count - 1
-        if indexPath.row == lastRowIndex && indexPath.row != 0 && !self.viewModel.isLoading {
-            self.viewModel.requestNextPage()
+        let lastRowIndex = self.searchUserViewModel.users.count - 1
+        if indexPath.row == lastRowIndex && indexPath.row != 0 && !self.searchUserViewModel.isLoading {
+            self.searchUserViewModel.requestNextPage()
         }
     }
     
@@ -169,10 +169,10 @@ extension ViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension ViewController: UITableViewDelegate {
+extension SearchUserViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let url = self.viewModel.userUrlAtIndex(indexPath.row) else { return }
+        guard let url = self.searchUserViewModel.userUrlAtIndex(indexPath.row) else { return }
         
         self.pushWebViewController(url: url)
     }
@@ -180,15 +180,15 @@ extension ViewController: UITableViewDelegate {
 
 // MARK: - UITextFieldDelegate
 
-extension ViewController: UITextFieldDelegate {
+extension SearchUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = textField.text, !text.isEmpty, text != self.viewModel.name {
-            if text != self.viewModel.name {
-                self.viewModel.resetCurrentPage()
+        if let text = textField.text, !text.isEmpty, text != self.searchUserViewModel.name {
+            if text != self.searchUserViewModel.name {
+                self.searchUserViewModel.resetCurrentPage()
             }
-            self.viewModel.setName(name: text)
-            let page = self.viewModel.currentPage
-            self.viewModel.requestUser(user: text, page: page)
+            self.searchUserViewModel.setName(name: text)
+            let page = self.searchUserViewModel.currentPage
+            self.searchUserViewModel.requestUser(user: text, page: page)
         }
         textField.resignFirstResponder()
         return true

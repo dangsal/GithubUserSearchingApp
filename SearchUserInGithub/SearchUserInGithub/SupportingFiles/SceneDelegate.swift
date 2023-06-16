@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         if UserDefaultStorage.isLogin {
-            let viewController = UINavigationController(rootViewController: ViewController())
+            let viewController = UINavigationController(rootViewController: SearchUserViewController())
             window?.rootViewController = viewController
         }
         else {
@@ -55,7 +55,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     private func pushViewController() {
-        let viewController = ViewController()
+        let viewController = SearchUserViewController()
         if let navigationController = self.window?.rootViewController as? UINavigationController {
             navigationController.pushViewController(viewController, animated: true)
         }
