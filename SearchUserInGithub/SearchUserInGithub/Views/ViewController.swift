@@ -193,9 +193,12 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let page = self.viewModel.currentPage
-        if let text = textField.text, !text.isEmpty {
-            self.viewModel.name = text
+        if let text = textField.text, !text.isEmpty, text != self.viewModel.name {
+            if text != self.viewModel.name {
+                self.viewModel.resetCurrentPage()
+            }
+            self.viewModel.setName(name: text)
+            let page = self.viewModel.currentPage
             self.viewModel.requestUser(user: text, page: page)
         }
         textField.resignFirstResponder()

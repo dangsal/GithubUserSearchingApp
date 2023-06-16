@@ -50,9 +50,11 @@ final class ViewModel {
                     let users = try response.map(SearchResult.self)
                     if page == 1 {
                         self.users = users.items
+                        self.isLoading = false
                     }
                     else {
                         self.users += users.items
+                        self.isLoading = false
                     }
                     self.isEmpty = users.items.isEmpty
                 } catch {
@@ -66,8 +68,19 @@ final class ViewModel {
     
     func requestNextPage() {
         self.isLoading = true
-        self.currentPage += 1
+        self.increaseCurrentPage()
         self.requestUser(user: self.name, page: currentPage)
-        self.isLoading = false
+    }
+    
+    func resetCurrentPage() {
+        self.currentPage = 1
+    }
+    
+    func increaseCurrentPage() {
+        self.currentPage += 1
+    }
+    
+    func setName(name: String) {
+        self.name = name
     }
 }
