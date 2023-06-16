@@ -145,14 +145,15 @@
 		D762DB1A2A38CF79003C4636 /* SearchUserInGithub */ = {
 			isa = PBXGroup;
 			children = (
-				D762DB5A2A38D33A003C4636 /* Literal */,
-				D762DB512A38D01B003C4636 /* Assets */,
-				D762DB502A38CFCC003C4636 /* Extensions */,
-				D762DB4F2A38CFC5003C4636 /* Helpers */,
+				D79973292A3C73C10008C6E8 /* Network */,
 				D762DB4E2A38CFC0003C4636 /* Models */,
 				D762DB4D2A38CFB9003C4636 /* Views */,
 				D762DB4C2A38CFAF003C4636 /* ViewModels */,
+				D762DB4F2A38CFC5003C4636 /* Helpers */,
+				D762DB502A38CFCC003C4636 /* Extensions */,
+				D762DB5A2A38D33A003C4636 /* Literal */,
 				D762DB4B2A38CFA5003C4636 /* SupportingFiles */,
+				D762DB512A38D01B003C4636 /* Assets */,
 				D762DB292A38CF7B003C4636 /* Info.plist */,
 			);
 			path = SearchUserInGithub;
@@ -215,8 +216,6 @@
 		D762DB4F2A38CFC5003C4636 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */,
-				D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */,
 				D79972FD2A3ADF850008C6E8 /* UserDefatultStorage.swift */,
 				D79972FF2A3ADF970008C6E8 /* UserDefaultHandler.swift */,
 				D79973112A3B55000008C6E8 /* ImageCacheManager.swift */,
@@ -287,6 +286,31 @@
 				D79973092A3B4C050008C6E8 /* UserViewModel.swift */,
 			);
 			path = SearchUser;
+			sourceTree = "<group>";
+		};
+		D79973292A3C73C10008C6E8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D799732B2A3C73E60008C6E8 /* OAuth */,
+				D799732A2A3C73D60008C6E8 /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D799732A2A3C73D60008C6E8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D79972F92A3AA6CA0008C6E8 /* GithubAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D799732B2A3C73E60008C6E8 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				D79972F52A3A045A0008C6E8 /* GithubOAuthManager.swift */,
+			);
+			path = OAuth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,8 +649,8 @@
 				INFOPLIST_FILE = SearchUserInGithub/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,8 +676,8 @@
 				INFOPLIST_FILE = SearchUserInGithub/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
