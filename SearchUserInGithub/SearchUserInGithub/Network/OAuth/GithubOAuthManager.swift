@@ -5,7 +5,6 @@
 //  Created by 이성호 on 2023/06/14.
 //
 
-import Foundation
 import UIKit
 
 import Moya
@@ -23,7 +22,7 @@ final class GithubOAuthManager {
     }
     
     func requestAuthCode() {
-        let urlString = "https://github.com/login/oauth/authorize?client_id=\(clientId)&scope=\(scope)"
+        let urlString = "https://github.com/login/oauth/authorize?client_id=\(self.clientId)&scope=\(self.scope)"
         
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
@@ -31,9 +30,11 @@ final class GithubOAuthManager {
     }
     
     func requestAccessToken(with code: String, completion: @escaping(Result<String, Error>) -> Void) {
-        let target = GithubAPI.fetchAccessToken(clientId: clientId, clientSecret: clientSecret, code: code)
+        let target = GithubAPI.fetchAccessToken(clientId: self.clientId,
+                                                clientSecret: self.clientSecret,
+                                                code: code)
         
-        provider.request(target) {result in
+        self.provider.request(target) {result in
             switch result {
             case .success(let response):
                 do {

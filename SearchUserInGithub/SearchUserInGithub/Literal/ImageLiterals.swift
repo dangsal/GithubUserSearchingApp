@@ -9,11 +9,11 @@ import UIKit
 
 enum ImageLiterals {
     
-    // Icon
+    // MARK: - icon
     static var magnifyingglass: UIImage { .load(systemName: "magnifyingglass") }
     static var xmark: UIImage { .load(systemName: "xmark.circle.fill") }
     static var logout: UIImage { .load(systemName: "rectangle.portrait.and.arrow.right") }
     
-    // image
+    // MARK: - image
     static var userDefaultProfile: UIImage { .load(systemName: "person.circle.fill") }
 }

@@ -8,8 +8,6 @@
 import Combine
 import UIKit
 
-import CombineMoya
-import Moya
 import Then
 
 
@@ -58,10 +56,10 @@ final class SearchUserViewController: UIViewController {
         self.userSearchTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: SizeLiterals.topPadding).isActive = true
         self.userSearchTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
         self.userSearchTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -SizeLiterals.leadingTrailingPadding).isActive = true
-         self.userSearchTextField.heightAnchor.constraint(equalToConstant: SizeLiterals.userSearchTextFieldHeight).isActive = true
+        self.userSearchTextField.heightAnchor.constraint(equalToConstant: SizeLiterals.userSearchTextFieldHeight).isActive = true
         
         self.view.addSubview(self.userTableView)
-         self.userTableView.topAnchor.constraint(equalTo: self.userSearchTextField.bottomAnchor, constant: SizeLiterals.padding).isActive = true
+        self.userTableView.topAnchor.constraint(equalTo: self.userSearchTextField.bottomAnchor, constant: SizeLiterals.padding).isActive = true
         self.userTableView.leadingAnchor.constraint(equalTo: self.userSearchTextField.leadingAnchor).isActive = true
         self.userTableView.trailingAnchor.constraint(equalTo: self.userSearchTextField.trailingAnchor).isActive = true
         self.userTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -74,7 +72,10 @@ final class SearchUserViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let rightButton = UIBarButtonItem(image: ImageLiterals.logout, style: .plain, target: self, action: #selector(didTapLogoutButton))
+        let rightButton = UIBarButtonItem(image: ImageLiterals.logout,
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(didTapLogoutButton))
         rightButton.tintColor = .systemRed
         navigationItem.rightBarButtonItem = rightButton
     }
@@ -129,8 +130,8 @@ final class SearchUserViewController: UIViewController {
 
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !searchUserViewModel.isEmpty {
-            return searchUserViewModel.numberOfRowInSection(section)
+        if !self.searchUserViewModel.isEmpty {
+            return self.searchUserViewModel.numberOfRowInSection(section)
         }
         else {
             return 1
@@ -139,11 +140,11 @@ extension SearchUserViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.configureTableView()
-        if !searchUserViewModel.isEmpty {
+        if !self.searchUserViewModel.isEmpty {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else {
                 return UITableViewCell()
             }
-            let userViewModel = searchUserViewModel.userAtIndex(indexPath.row)
+            let userViewModel = self.searchUserViewModel.userAtIndex(indexPath.row)
             cell.configureUserInformation(user: userViewModel)
             return cell
         }

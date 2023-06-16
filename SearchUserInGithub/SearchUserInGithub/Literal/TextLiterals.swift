@@ -8,6 +8,7 @@
 import Foundation
 
 enum TextLiterals {
+    
     // MARK: - textField placeholder
     static let userSearchTextField: String = "유저를 검색하세요"
     

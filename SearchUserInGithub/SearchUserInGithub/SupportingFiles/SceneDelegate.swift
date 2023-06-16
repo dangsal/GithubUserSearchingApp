@@ -7,10 +7,9 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -31,8 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         if let url = URLContexts.first?.url {
             let code = url.absoluteString.components(separatedBy: "code=").last ?? ""
-            print("url: ", url)
-            print("code:", code)
             GithubOAuthManager.shared.requestAccessToken(with: code) { result in
                 DispatchQueue.main.async {
                     self.pushViewController()
@@ -61,14 +58,14 @@ extension SceneDelegate {
         }
     }
     
-    func logout() {
-        self.clearUserDefaultData()
-        print("UserDefaultStorage.isLogin: ", UserDefaultStorage.isLogin)
-        print("UserDefaultStorage.accessToken", UserDefaultStorage.accessToken)
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
-    }
-    
     private func clearUserDefaultData() {
         UserDefaultHandler.clearAllData()
     }
+    
+    func logout() {
+        self.clearUserDefaultData()
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+    }
+    
+
 }

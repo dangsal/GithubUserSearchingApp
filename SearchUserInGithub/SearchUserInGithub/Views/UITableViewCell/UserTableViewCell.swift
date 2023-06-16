@@ -30,8 +30,6 @@ final class UserTableViewCell: UITableViewCell {
         $0.textColor = .gray
     }
     
-    // MARK: - property
-    
     // MARK: - init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,6 +37,7 @@ final class UserTableViewCell: UITableViewCell {
         self.setupLayout()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -47,9 +46,9 @@ final class UserTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        userImageView.image = ImageLiterals.userDefaultProfile
-        userNameLabel.text = nil
-        userUrlLabel.text = nil
+        self.userImageView.image = ImageLiterals.userDefaultProfile
+        self.userNameLabel.text = nil
+        self.userUrlLabel.text = nil
     }
     
     private func setupLayout() {

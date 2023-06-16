@@ -8,17 +8,20 @@
 import Combine
 import Foundation
 
-import CombineMoya
 import Moya
 
 final class SearchUserViewModel {
+    
+    // MARK: - property
     
     @Published var users: [User] = []
     @Published var isEmpty: Bool = false
     var currentPage: Int = 1
     var isLoading: Bool = false
     var name: String = ""
-    var totalCount: Int = 0
+    private var totalCount: Int = 0
+    
+    // MARK: - func
     
     func numberOfRowInSection(_ section: Int) -> Int {
         return self.users.count
@@ -31,11 +34,33 @@ final class SearchUserViewModel {
     }
     
     func userUrlAtIndex(_ index: Int) -> URL? {
-        guard index < users.count else { return nil }
+        guard index < self.users.count else { return nil }
         let user = self.users[index]
         
         return URL(string: user.url)
     }
+    
+    func requestNextPage() {
+        if self.currentPage <= self.totalCount / 30 {
+            self.increaseCurrentPage()
+            self.requestUser(user: self.name, page: self.currentPage)
+        }
+        return
+    }
+    
+    func resetCurrentPage() {
+        self.currentPage = 1
+    }
+    
+    func increaseCurrentPage() {
+        self.currentPage += 1
+    }
+    
+    func setName(name: String) {
+        self.name = name
+    }
+    
+    // MARK: - network
     
     func requestUser(user: String, page: Int) {
         let provider = MoyaProvider<GithubAPI>()
@@ -62,25 +87,5 @@ final class SearchUserViewModel {
                 print("network error", error)
             }
         }
-    }
-    
-    func requestNextPage() {
-        if currentPage <= self.totalCount / 30 {
-            self.increaseCurrentPage()
-            self.requestUser(user: self.name, page: self.currentPage)
-        }
-        return 
-    }
-    
-    func resetCurrentPage() {
-        self.currentPage = 1
-    }
-    
-    func increaseCurrentPage() {
-        self.currentPage += 1
-    }
-    
-    func setName(name: String) {
-        self.name = name
     }
 }

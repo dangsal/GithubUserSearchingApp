@@ -8,6 +8,7 @@
 import Foundation
 
 struct UserDefaultHandler {
+    
     static func clearAllData() {
         UserData<Any>.clearAll()
     }
