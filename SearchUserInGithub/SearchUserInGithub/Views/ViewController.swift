@@ -74,14 +74,14 @@ final class ViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let rightButton = UIBarButtonItem(image: ImageLiterals.profile, style: .plain, target: self, action: #selector(didTapMyPageButton))
+        let rightButton = UIBarButtonItem(image: ImageLiterals.logout, style: .plain, target: self, action: #selector(didTapLogoutButton))
+        rightButton.tintColor = .systemRed
         navigationItem.rightBarButtonItem = rightButton
     }
     
     private func configureUI() {
         self.view.backgroundColor = .systemBackground
         self.navigationItem.hidesBackButton = true
-        self.configureByUserInterfaceStyle()
     }
     
     private func setBindings() {
@@ -106,33 +106,23 @@ final class ViewController: UIViewController {
         }
     }
     
-    private func configureByUserInterfaceStyle() {
-        switch self.traitCollection.userInterfaceStyle {
-        case .light:
-            self.navigationItem.rightBarButtonItem?.tintColor = .black
-        case .dark:
-            self.navigationItem.rightBarButtonItem?.tintColor = .white
-        default:
-            return
-        }
-    }
-    
     private func pushWebViewController(url: URL) {
         let viewController = WebViewController(url: url)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        self.configureByUserInterfaceStyle()
-    }
-    
     // MARK: - selector
     
     @objc
-    private func didTapMyPageButton() {
-        let viewController = MyPageViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
+    private func didTapLogoutButton() {
+        self.makeRequestAlert(title: "로그아웃",
+                               message: "로그아웃 하시겠습니까?",
+                               okTitle: "로그아웃",
+                               cancelTitle: "취소",
+                              okAction: { _ in
+            guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            sceneDelegate.logout()
+        })
     }
 }
 
