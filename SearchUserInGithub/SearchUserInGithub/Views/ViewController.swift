@@ -20,7 +20,7 @@ final class ViewController: UIViewController {
     private let userSearchTextField = UITextField().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = UIColor.gray.cgColor
+        $0.layer.borderColor = UIColor.systemGray.cgColor
         $0.layer.cornerRadius = 8
         $0.placeholder = TextLiterals.userSearchTextField
         $0.returnKeyType = .search
@@ -45,15 +45,15 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         self.setupLayout()
         self.setupDelegation()
-        self.configureUI()
         self.setupNavigationBar()
+        self.configureUI()
         self.setBindings()
         self.hideKeyboardWhenTapped()
     }
 
     // MARK: - func
     
-    private func setupLayout() {
+     private func setupLayout() {
         self.view.addSubview(self.userSearchTextField)
         self.userSearchTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: SizeLiterals.topPadding).isActive = true
         self.userSearchTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
@@ -73,15 +73,15 @@ final class ViewController: UIViewController {
         self.userSearchTextField.delegate = self
     }
     
-    private func configureUI() {
-        self.view.backgroundColor = .white
-        self.navigationItem.hidesBackButton = true
-    }
-    
     private func setupNavigationBar() {
         let rightButton = UIBarButtonItem(image: ImageLiterals.profile, style: .plain, target: self, action: #selector(didTapMyPageButton))
-        rightButton.tintColor = .systemBlue
         navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    private func configureUI() {
+        self.view.backgroundColor = .systemBackground
+        self.navigationItem.hidesBackButton = true
+        self.configureByUserInterfaceStyle()
     }
     
     private func setBindings() {
@@ -106,9 +106,25 @@ final class ViewController: UIViewController {
         }
     }
     
+    private func configureByUserInterfaceStyle() {
+        switch self.traitCollection.userInterfaceStyle {
+        case .light:
+            self.navigationItem.rightBarButtonItem?.tintColor = .black
+        case .dark:
+            self.navigationItem.rightBarButtonItem?.tintColor = .white
+        default:
+            return
+        }
+    }
+    
     private func pushWebViewController(url: URL) {
         let viewController = WebViewController(url: url)
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.configureByUserInterfaceStyle()
     }
     
     // MARK: - selector
