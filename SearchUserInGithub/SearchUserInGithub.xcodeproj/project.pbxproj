@@ -202,8 +202,8 @@
 		D762DB4D2A38CFB9003C4636 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D79973272A3C712F0008C6E8 /* SearchUser */,
 				D79973252A3C711D0008C6E8 /* Login */,
+				D79973272A3C712F0008C6E8 /* SearchUser */,
 				D762DB652A38E127003C4636 /* UITableViewCell */,
 			);
 			path = Views;

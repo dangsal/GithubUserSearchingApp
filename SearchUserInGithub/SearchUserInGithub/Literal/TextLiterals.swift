@@ -9,7 +9,7 @@ import Foundation
 
 enum TextLiterals {
     // MARK: - textField placeholder
-    static let userSearchTextField: String = "유저 검색"
+    static let userSearchTextField: String = "유저를 검색하세요"
     
     // MARK: - label
     static let emptyViewLabel: String = "해당 닉네임을 가진 유저가 없어요"
