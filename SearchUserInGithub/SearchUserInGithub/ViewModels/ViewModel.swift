@@ -66,8 +66,8 @@ final class ViewModel {
     
     func requestNextPage() {
         self.isLoading = true
-        let nextPage = currentPage + 1
-        requestUser(user: self.name, page: nextPage)
+        self.currentPage += 1
+        self.requestUser(user: self.name, page: currentPage)
         self.isLoading = false
     }
 }
