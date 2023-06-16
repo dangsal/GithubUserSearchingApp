@@ -15,7 +15,7 @@ final class EmptyViewCell: UITableViewCell {
     
     private let emptyLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "해당 닉네임을 가진 유저가 없어요"
+        $0.text = TextLiterals.emptyViewLabel
         $0.font = .systemFont(ofSize: 18)
         $0.textColor = .systemGray
     }

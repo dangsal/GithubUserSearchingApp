@@ -115,10 +115,9 @@ final class ViewController: UIViewController {
     
     @objc
     private func didTapLogoutButton() {
-        self.makeRequestAlert(title: "로그아웃",
-                               message: "로그아웃 하시겠습니까?",
-                               okTitle: "로그아웃",
-                               cancelTitle: "취소",
+        self.makeRequestAlert(title: TextLiterals.logoutText,
+                              message: TextLiterals.logoutMessage,
+                              okTitle: TextLiterals.logoutText,
                               okAction: { _ in
             guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
             sceneDelegate.logout()

@@ -16,8 +16,8 @@ extension UIViewController {
     
     func makeRequestAlert(title: String,
                           message: String,
-                          okTitle: String = "확인",
-                          cancelTitle: String = "취소",
+                          okTitle: String = TextLiterals.okText,
+                          cancelTitle: String = TextLiterals.cancelText,
                           okAction: ((UIAlertAction) -> Void)?,
                           cancelAction: ((UIAlertAction) -> Void)? = nil,
                           completion : (() -> Void)? = nil) {

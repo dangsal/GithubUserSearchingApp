@@ -23,13 +23,11 @@ final class UserTableViewCell: UITableViewCell {
     private let userNameLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = UIFont.systemFont(ofSize: 18)
-        $0.text = "이성호"
     }
     private let userUrlLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = UIFont.systemFont(ofSize: 14)
         $0.textColor = .gray
-        $0.text = "shdkflsakjdfasdfasdfasdfasdf"
     }
     
     // MARK: - property
