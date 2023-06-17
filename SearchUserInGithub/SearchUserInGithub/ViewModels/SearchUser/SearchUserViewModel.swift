@@ -16,7 +16,7 @@ final class SearchUserViewModel {
     // MARK: - property
     
     @Published var users: [User] = []
-    @Published var isEmpty: Bool = false
+    var isEmpty: Bool = false
     lazy var errorMessage = PassthroughSubject<String, Never>()
     private var currentPage: Int = 1
     private var totalCount: Int = 0
