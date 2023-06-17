@@ -64,6 +64,23 @@ final class SearchUserViewModel {
         self.name = name
     }
     
+    private func handleError(_ error: Error) {
+        let errorMessage = error.localizedDescription
+        self.errorMessage.send(errorMessage)
+    }
+    
+    private func handleResponse(_ response: SearchResult, page: Int) {
+        if page == 1 {
+            self.users = response.items
+            self.totalCount = response.totalCount
+        }
+        else {
+            self.users += response.items
+        }
+        self.isLoading = false
+        self.isEmpty = response.items.isEmpty
+    }
+    
     // MARK: - network
     
     func requestUser(user: String, page: Int) {
@@ -71,24 +88,15 @@ final class SearchUserViewModel {
         self.provider.requestPublisher(.searchUsers(query: user, page: page))
             .map(SearchResult.self)
             .receive(on: DispatchQueue.main)
-            .sink { completion in
+            .sink { [weak self] completion in
                 switch completion {
                 case .failure(let error):
-                    self.errorMessage.send(error.localizedDescription)
+                    self?.handleError(error)
                 case .finished:
                     break
                 }
-            } receiveValue: { response in
-                if page == 1 {
-                    self.users = response.items
-                    self.totalCount = response.totalCount
-                    self.isLoading = false
-                }
-                else {
-                    self.users += response.items
-                    self.isLoading = false
-                }
-                self.isEmpty = response.items.isEmpty
+            } receiveValue: { [weak self] response in
+                self?.handleResponse(response, page: page)
             }
             .store(in: &self.cancellables)
     }
