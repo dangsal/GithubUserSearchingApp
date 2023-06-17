@@ -67,9 +67,9 @@ final class SearchUserViewModel {
     func searchUser(userName: String) {
         if userName != self.userName {
             self.resetCurrentPage()
+            self.setName(userName: userName)
+            self.requestUser(user: userName, page: currentPage)
         }
-        self.setName(userName: userName)
-        self.requestUser(user: userName, page: currentPage)
     }
     
     private func handleError(_ error: Error) {
