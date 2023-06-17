@@ -19,7 +19,7 @@ final class SearchUserViewModel {
     @Published var isEmpty: Bool = false
     var currentPage: Int = 1
     var isLoading: Bool = false
-    var name: String = ""
+    var userName: String = ""
     let errorMessage = PassthroughSubject<String, Never>()
     private var totalCount: Int = 0
     private var cancellables = Set<AnyCancellable>()
@@ -47,7 +47,7 @@ final class SearchUserViewModel {
     func requestNextPage() {
         if self.currentPage <= self.totalCount / 30 {
             self.increaseCurrentPage()
-            self.requestUser(user: self.name, page: self.currentPage)
+            self.requestUser(user: self.userName, page: self.currentPage)
         }
         return
     }
@@ -60,8 +60,8 @@ final class SearchUserViewModel {
         self.currentPage += 1
     }
     
-    func setName(name: String) {
-        self.name = name
+    func setName(userName: String) {
+        self.userName = userName
     }
     
     private func handleError(_ error: Error) {
