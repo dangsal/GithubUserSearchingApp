@@ -18,10 +18,10 @@ final class SearchUserViewModel {
     @Published var users: [User] = []
     @Published var isEmpty: Bool = false
     lazy var errorMessage = PassthroughSubject<String, Never>()
-    lazy var isLoading: Bool = false
     private var currentPage: Int = 1
     private var totalCount: Int = 0
     private var userName: String = ""
+    private lazy var isLoading: Bool = false
     private var cancellables = Set<AnyCancellable>()
     private let provider = MoyaProvider<GithubAPI>()
     

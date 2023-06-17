@@ -165,7 +165,7 @@ extension SearchUserViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastRowIndex = self.searchUserViewModel.users.count - 1
-        if indexPath.row == lastRowIndex && indexPath.row != 0 && !self.searchUserViewModel.isLoading {
+        if indexPath.row == lastRowIndex && indexPath.row != 0 {
             self.searchUserViewModel.requestNextPage()
         }
     }
