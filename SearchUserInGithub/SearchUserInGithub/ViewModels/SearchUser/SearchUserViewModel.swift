@@ -17,11 +17,11 @@ final class SearchUserViewModel {
     
     @Published var users: [User] = []
     @Published var isEmpty: Bool = false
-    var currentPage: Int = 1
-    var isLoading: Bool = false
-    var userName: String = ""
-    let errorMessage = PassthroughSubject<String, Never>()
+    lazy var errorMessage = PassthroughSubject<String, Never>()
+    lazy var isLoading: Bool = false
+    private var currentPage: Int = 1
     private var totalCount: Int = 0
+    private var userName: String = ""
     private var cancellables = Set<AnyCancellable>()
     private let provider = MoyaProvider<GithubAPI>()
     
@@ -62,6 +62,14 @@ final class SearchUserViewModel {
     
     func setName(userName: String) {
         self.userName = userName
+    }
+    
+    func searchUser(userName: String) {
+        if userName != self.userName {
+            self.resetCurrentPage()
+        }
+        self.setName(userName: userName)
+        self.requestUser(user: userName, page: currentPage)
     }
     
     private func handleError(_ error: Error) {

@@ -190,13 +190,8 @@ extension SearchUserViewController: UITableViewDelegate {
 
 extension SearchUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let text = textField.text, !text.isEmpty, text != self.searchUserViewModel.userName {
-            if text != self.searchUserViewModel.userName {
-                self.searchUserViewModel.resetCurrentPage()
-            }
-            self.searchUserViewModel.setName(userName: text)
-            let page = self.searchUserViewModel.currentPage
-            self.searchUserViewModel.requestUser(user: text, page: page)
+        if let text = textField.text, !text.isEmpty {
+            self.searchUserViewModel.searchUser(userName: text)
         }
         textField.resignFirstResponder()
         return true
