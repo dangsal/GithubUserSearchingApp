@@ -16,6 +16,8 @@ final class LoginViewController: UIViewController {
     private let loginButton: UIButton = UIButton(type: .system).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle(TextLiterals.loginLabel, for: .normal)
+        $0.layer.cornerRadius = SizeLiterals.cornerRadiusValue
+        $0.layer.masksToBounds = true
     }
     
     // MARK: - life cycle
@@ -32,7 +34,7 @@ final class LoginViewController: UIViewController {
     private func setupLayout() {
         self.view.addSubview(self.loginButton)
         self.loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        self.loginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        self.loginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -SizeLiterals.bottomPadding).isActive = true
         self.loginButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: SizeLiterals.leadingTrailingPadding).isActive = true
         self.loginButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -SizeLiterals.leadingTrailingPadding).isActive = true
         self.loginButton.heightAnchor.constraint(equalToConstant: SizeLiterals.loginButtonHeight).isActive = true

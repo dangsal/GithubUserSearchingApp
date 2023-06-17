@@ -19,7 +19,7 @@ final class SearchUserViewController: UIViewController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.systemGray.cgColor
-        $0.layer.cornerRadius = 8
+        $0.layer.cornerRadius = SizeLiterals.cornerRadiusValue
         $0.placeholder = TextLiterals.userSearchTextField
         $0.returnKeyType = .search
         $0.addPadding()

@@ -11,6 +11,7 @@ enum SizeLiterals {
     
     // MARK: - padding
     static let topPadding: CGFloat = 20
+    static let bottomPadding: CGFloat = 20
     static let leadingTrailingPadding: CGFloat = 20
     static let padding: CGFloat = 12
     
@@ -20,4 +21,7 @@ enum SizeLiterals {
     static let userSearchTextFieldHeight: CGFloat = 60
     static let tableViewCellHight: CGFloat = 72
     static let loginButtonHeight: CGFloat = 60
+    
+    // MARK: -
+    static let cornerRadiusValue: CGFloat = 8
 }
