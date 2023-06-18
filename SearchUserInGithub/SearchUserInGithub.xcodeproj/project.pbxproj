@@ -11,7 +11,6 @@
 		D762DB1E2A38CF79003C4636 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB1D2A38CF79003C4636 /* SceneDelegate.swift */; };
 		D762DB202A38CF79003C4636 /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB1F2A38CF79003C4636 /* SearchUserViewController.swift */; };
 		D762DB252A38CF7B003C4636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D762DB242A38CF7B003C4636 /* Assets.xcassets */; };
-		D762DB282A38CF7B003C4636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D762DB262A38CF7B003C4636 /* LaunchScreen.storyboard */; };
 		D762DB332A38CF7B003C4636 /* SearchUserInGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB322A38CF7B003C4636 /* SearchUserInGithubTests.swift */; };
 		D762DB3D2A38CF7B003C4636 /* SearchUserInGithubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB3C2A38CF7B003C4636 /* SearchUserInGithubUITests.swift */; };
 		D762DB3F2A38CF7B003C4636 /* SearchUserInGithubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762DB3E2A38CF7B003C4636 /* SearchUserInGithubUITestsLaunchTests.swift */; };
@@ -66,7 +65,6 @@
 		D762DB1D2A38CF79003C4636 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D762DB1F2A38CF79003C4636 /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		D762DB242A38CF7B003C4636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D762DB272A38CF7B003C4636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D762DB292A38CF7B003C4636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D762DB2E2A38CF7B003C4636 /* SearchUserInGithubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SearchUserInGithubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D762DB322A38CF7B003C4636 /* SearchUserInGithubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserInGithubTests.swift; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 			children = (
 				D762DB1B2A38CF79003C4636 /* AppDelegate.swift */,
 				D762DB1D2A38CF79003C4636 /* SceneDelegate.swift */,
-				D762DB262A38CF7B003C4636 /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -433,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D79973362A3C841A0008C6E8 /* Keys.plist in Resources */,
-				D762DB282A38CF7B003C4636 /* LaunchScreen.storyboard in Resources */,
 				D762DB252A38CF7B003C4636 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,17 +514,6 @@
 			targetProxy = D762DB392A38CF7B003C4636 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D762DB262A38CF7B003C4636 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D762DB272A38CF7B003C4636 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D762DB402A38CF7B003C4636 /* Debug */ = {
