@@ -30,6 +30,7 @@
 		D72887F22AC5C55600A8BF28 /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D72887F12AC5C55600A8BF28 /* RxTest-Dynamic */; };
 		D72887F92AC5CDC700A8BF28 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72887F82AC5CDC700A8BF28 /* LoginViewController.swift */; };
 		D72887FB2AC5CDF700A8BF28 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72887FA2AC5CDF700A8BF28 /* LoginView.swift */; };
+		D72887FE2AC5CF2F00A8BF28 /* SizeLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72887FD2AC5CF2F00A8BF28 /* SizeLiteral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		D70A8F1D2AC5BC920095BE83 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
 		D72887F82AC5CDC700A8BF28 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D72887FA2AC5CDF700A8BF28 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D72887FD2AC5CF2F00A8BF28 /* SizeLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiteral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		D70A8F082AC5B89F0095BE83 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				D72887FC2AC5CF2600A8BF28 /* Literal */,
 				D70A8F192AC5BC690095BE83 /* Extension */,
 			);
 			path = Util;
@@ -316,6 +319,14 @@
 			children = (
 			);
 			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		D72887FC2AC5CF2600A8BF28 /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				D72887FD2AC5CF2F00A8BF28 /* SizeLiteral.swift */,
+			);
+			path = Literal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 				D70A8ED72AC5B85C0095BE83 /* AppDelegate.swift in Sources */,
 				D70A8F152AC5B96E0095BE83 /* SearchUserViewController.swift in Sources */,
 				D70A8F1C2AC5BC7D0095BE83 /* UIViewController+Preview.swift in Sources */,
+				D72887FE2AC5CF2F00A8BF28 /* SizeLiteral.swift in Sources */,
 				D70A8ED92AC5B85C0095BE83 /* SceneDelegate.swift in Sources */,
 				D70A8F182AC5BAAB0095BE83 /* SearchUserView.swift in Sources */,
 				D72887FB2AC5CDF700A8BF28 /* LoginView.swift in Sources */,
