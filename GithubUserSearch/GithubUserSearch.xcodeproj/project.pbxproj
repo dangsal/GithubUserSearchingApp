@@ -11,6 +11,7 @@
 		7EA0497C2AC8529900B5FD06 /* LoginEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0497B2AC8529900B5FD06 /* LoginEndPoint.swift */; };
 		7EA0497E2AC8540300B5FD06 /* UserDefaultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0497D2AC8540300B5FD06 /* UserDefaultHandler.swift */; };
 		7EA049802AC8542700B5FD06 /* UserDefatultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA0497F2AC8542700B5FD06 /* UserDefatultStorage.swift */; };
+		7EA049822AC855B900B5FD06 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA049812AC855B900B5FD06 /* LoginViewModel.swift */; };
 		D70A8ED72AC5B85C0095BE83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A8ED62AC5B85C0095BE83 /* AppDelegate.swift */; };
 		D70A8ED92AC5B85C0095BE83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A8ED82AC5B85C0095BE83 /* SceneDelegate.swift */; };
 		D70A8EE02AC5B85D0095BE83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70A8EDF2AC5B85D0095BE83 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		7EA0497B2AC8529900B5FD06 /* LoginEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginEndPoint.swift; path = GithubUserSearch/Data/OAuth/LoginEndPoint.swift; sourceTree = SOURCE_ROOT; };
 		7EA0497D2AC8540300B5FD06 /* UserDefaultHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultHandler.swift; path = GithubUserSearch/Data/OAuth/UserDefaultHandler.swift; sourceTree = SOURCE_ROOT; };
 		7EA0497F2AC8542700B5FD06 /* UserDefatultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefatultStorage.swift; path = GithubUserSearch/Data/OAuth/UserDefatultStorage.swift; sourceTree = SOURCE_ROOT; };
+		7EA049812AC855B900B5FD06 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = GithubUserSearch/Data/OAuth/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
 		D70A8ED32AC5B85C0095BE83 /* GithubUserSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubUserSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70A8ED62AC5B85C0095BE83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D70A8ED82AC5B85C0095BE83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		D72887F62AC5CDB600A8BF28 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				7EA049812AC855B900B5FD06 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				D70A8ED72AC5B85C0095BE83 /* AppDelegate.swift in Sources */,
 				7EA0497A2AC8526E00B5FD06 /* GithubOAuthManager.swift in Sources */,
 				D70A8F152AC5B96E0095BE83 /* SearchUserViewController.swift in Sources */,
+				7EA049822AC855B900B5FD06 /* LoginViewModel.swift in Sources */,
 				D70A8F1C2AC5BC7D0095BE83 /* UIViewController+Preview.swift in Sources */,
 				D72887FE2AC5CF2F00A8BF28 /* SizeLiteral.swift in Sources */,
 				D728880D2AC5DB3200A8BF28 /* Key+Extension.swift in Sources */,
