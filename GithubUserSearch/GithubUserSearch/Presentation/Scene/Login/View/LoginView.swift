@@ -5,6 +5,7 @@
 //  Created by 이성호 on 2023/09/29.
 //
 
+import Combine
 import UIKit
 
 import SnapKit
@@ -25,11 +26,14 @@ final class LoginView: UIView {
     
     // MARK: - property
     
+    lazy var loginButtonDidTapEvent = self.loginButton.tapPublisher
+    
     // MARK: - init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupLayout()
+        self.configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -46,6 +50,10 @@ final class LoginView: UIView {
             $0.bottom.equalToSuperview().inset(SizeLiteral.bottomPadding)
             $0.height.equalTo(60)
         }
+    }
+    
+    private func configureUI() {
+        self.backgroundColor = .white
     }
 }
 

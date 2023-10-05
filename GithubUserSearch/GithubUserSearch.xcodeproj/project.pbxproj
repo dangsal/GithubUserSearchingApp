@@ -43,6 +43,7 @@
 		D728880B2AC5DB2A00A8BF28 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = D728880A2AC5DB2A00A8BF28 /* Key.plist */; };
 		D728880D2AC5DB3200A8BF28 /* Key+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D728880C2AC5DB3200A8BF28 /* Key+Extension.swift */; };
 		D728880F2AC5DB3C00A8BF28 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D728880E2AC5DB3C00A8BF28 /* APIEnvironment.swift */; };
+		D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		D728880A2AC5DB2A00A8BF28 /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		D728880C2AC5DB3200A8BF28 /* Key+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Key+Extension.swift"; sourceTree = "<group>"; };
 		D728880E2AC5DB3C00A8BF28 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 		D70A8F192AC5BC690095BE83 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D7D66FB72ACE94AE0047BC6E /* Combine */,
 				D70A8F1A2AC5BC6D0095BE83 /* Preview */,
 			);
 			path = Extension;
@@ -383,6 +386,14 @@
 				D728880E2AC5DB3C00A8BF28 /* APIEnvironment.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		D7D66FB72ACE94AE0047BC6E /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -544,6 +555,7 @@
 				7EA0497A2AC8526E00B5FD06 /* GithubOAuthManager.swift in Sources */,
 				D70A8F152AC5B96E0095BE83 /* SearchUserViewController.swift in Sources */,
 				7EA049822AC855B900B5FD06 /* LoginViewModel.swift in Sources */,
+				D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */,
 				D70A8F1C2AC5BC7D0095BE83 /* UIViewController+Preview.swift in Sources */,
 				D72887FE2AC5CF2F00A8BF28 /* SizeLiteral.swift in Sources */,
 				D728880D2AC5DB3200A8BF28 /* Key+Extension.swift in Sources */,

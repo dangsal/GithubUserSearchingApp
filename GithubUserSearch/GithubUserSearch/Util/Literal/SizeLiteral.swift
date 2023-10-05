@@ -14,5 +14,5 @@ enum SizeLiteral {
     
     // MARK: - padding
     static let leadingTrailingPadding: CGFloat = 20
-    static let bottomPadding: CGFloat = 20
+    static let bottomPadding: CGFloat = 40
 }
