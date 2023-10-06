@@ -53,6 +53,7 @@
 		D7414E9F2AD01B3F0016F9D1 /* EmptyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E9E2AD01B3F0016F9D1 /* EmptyViewCell.swift */; };
 		D7414EA52AD01CBB0016F9D1 /* UserInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414EA42AD01CBB0016F9D1 /* UserInfoDTO.swift */; };
 		D7414EA82AD01CE10016F9D1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414EA72AD01CE10016F9D1 /* UserInfo.swift */; };
+		D7414EAA2AD01E690016F9D1 /* SearchResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414EA92AD01E690016F9D1 /* SearchResultDTO.swift */; };
 		D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		D7414E9E2AD01B3F0016F9D1 /* EmptyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewCell.swift; sourceTree = "<group>"; };
 		D7414EA42AD01CBB0016F9D1 /* UserInfoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDTO.swift; sourceTree = "<group>"; };
 		D7414EA72AD01CE10016F9D1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		D7414EA92AD01E690016F9D1 /* SearchResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDTO.swift; sourceTree = "<group>"; };
 		D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -448,6 +450,7 @@
 			isa = PBXGroup;
 			children = (
 				D7414EA42AD01CBB0016F9D1 /* UserInfoDTO.swift */,
+				D7414EA92AD01E690016F9D1 /* SearchResultDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				7EA0497C2AC8529900B5FD06 /* LoginEndPoint.swift in Sources */,
 				D73921E22ACFF08C002545EA /* SearchUserViewModel.swift in Sources */,
 				D728880F2AC5DB3C00A8BF28 /* APIEnvironment.swift in Sources */,
+				D7414EAA2AD01E690016F9D1 /* SearchResultDTO.swift in Sources */,
 				7EA049802AC8542700B5FD06 /* UserDefatultStorage.swift in Sources */,
 				D7414E912ACFF64E0016F9D1 /* UITextField+UI.swift in Sources */,
 				D70A8F182AC5BAAB0095BE83 /* SearchUserView.swift in Sources */,
