@@ -220,6 +220,7 @@
 		D70A8F092AC5B8A50095BE83 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D7D66FBE2ACE97540047BC6E /* Repository */,
 				7EA049782AC8525300B5FD06 /* OAuth */,
 				D72888092AC5DB1900A8BF28 /* Foundation */,
 				D72888082AC5DB0F00A8BF28 /* EndPoint */,
@@ -230,6 +231,7 @@
 		D70A8F0A2AC5B8AA0095BE83 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D7D66FC12ACEA51A0047BC6E /* Usecase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -394,6 +396,28 @@
 				D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */,
 			);
 			path = Combine;
+			sourceTree = "<group>";
+		};
+		D7D66FBE2ACE97540047BC6E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D7D66FC12ACEA51A0047BC6E /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				D7D66FC22ACEA5220047BC6E /* LoginScene */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		D7D66FC22ACEA5220047BC6E /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

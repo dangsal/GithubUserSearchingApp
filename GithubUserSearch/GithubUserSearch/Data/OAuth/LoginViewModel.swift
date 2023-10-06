@@ -18,7 +18,7 @@ final class LoginViewModel {
     }
     
     struct Output {
-//        let isLogin: AnyPublisher<Bool, Never>
+        
     }
     
     // MARK: - property
@@ -33,13 +33,16 @@ final class LoginViewModel {
     // MARK: - func
     
     func transform(from input: Input) -> Output {
-        let isLogined = input.loginButtonDidTapEvent
+        input.loginButtonDidTapEvent
             .sink { [weak self] _ in
-                print("clicked here")
+                self?.fetchOAuthCode()
             }
             .store(in: &self.cancellable)
-            
-        
         return Output()
+    }
+    
+    private func fetchOAuthCode() {
+        let apiManager = GithubOAuthManager.shared
+        apiManager.requestAuthCode()
     }
 }
