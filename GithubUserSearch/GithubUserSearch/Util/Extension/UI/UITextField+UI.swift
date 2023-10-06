@@ -7,7 +7,7 @@
 
 import UIKit
 
-import Then
+//import Then
 
 extension UITextField {
     func addPadding() {
@@ -19,11 +19,11 @@ extension UITextField {
         let iconView: UIImageView = UIImageView(frame: CGRect(x: 10,
                                                               y: 0,
                                                               width: image.size.width,
-                                                              height: image.size.height)).then {
-            $0.image = image
-            $0.tintColor = .gray
-            $0.contentMode = .center
-        }
+                                                              height: image.size.height))
+        iconView.image = image
+        iconView.tintColor = .gray
+        iconView.contentMode = .center
+    
         
         leftView.addSubview(iconView)
         
@@ -38,15 +38,15 @@ extension UITextField {
                                                      y: 0,
                                                      width: image.size.width + 30,
                                                      height: image.size.height + 30))
-        let clearButton: UIButton = UIButton(type: .custom).then {
-            $0.setImage(image, for: .normal)
-            $0.tintColor = .gray
-            $0.isHidden = true
-            $0.frame = CGRect(x: 0,
+        let clearButton: UIButton = UIButton(type: .custom)
+        clearButton.setImage(image, for: .normal)
+        clearButton.tintColor = .gray
+        clearButton.isHidden = true
+        clearButton.frame = CGRect(x: 0,
                               y: 0,
                               width: rightView.bounds.size.width,
                               height: rightView.bounds.size.height)
-        }
+        
         
         let clearButtonDidtap = UIAction { [weak self] _ in
             self?.text = ""

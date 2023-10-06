@@ -46,7 +46,6 @@
 		D73921E22ACFF08C002545EA /* SearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73921E12ACFF08C002545EA /* SearchUserViewModel.swift */; };
 		D73921E42ACFF4E4002545EA /* TextLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73921E32ACFF4E4002545EA /* TextLiteral.swift */; };
 		D7414E912ACFF64E0016F9D1 /* UITextField+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E902ACFF64E0016F9D1 /* UITextField+UI.swift */; };
-		D7414E942ACFF6800016F9D1 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D7414E932ACFF6800016F9D1 /* Then */; };
 		D7414E962ACFF69A0016F9D1 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E952ACFF69A0016F9D1 /* ImageLiteral.swift */; };
 		D7414E982ACFF6BC0016F9D1 /* UIImage+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E972ACFF6BC0016F9D1 /* UIImage+UI.swift */; };
 		D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */; };
@@ -111,7 +110,6 @@
 				D72888072AC5DAEA00A8BF28 /* RxMoya in Frameworks */,
 				D72887E42AC5C4EB00A8BF28 /* RxRelay in Frameworks */,
 				D72887EA2AC5C4EB00A8BF28 /* RxSwift-Dynamic in Frameworks */,
-				D7414E942ACFF6800016F9D1 /* Then in Frameworks */,
 				D72887DE2AC5C4EB00A8BF28 /* RxBlocking-Dynamic in Frameworks */,
 				D72887E22AC5C4EB00A8BF28 /* RxCocoa-Dynamic in Frameworks */,
 				D72887D92AC5C49E00A8BF28 /* SnapKit in Frameworks */,
@@ -475,7 +473,6 @@
 				D72888022AC5DAE900A8BF28 /* Moya */,
 				D72888042AC5DAE900A8BF28 /* ReactiveMoya */,
 				D72888062AC5DAE900A8BF28 /* RxMoya */,
-				D7414E932ACFF6800016F9D1 /* Then */,
 			);
 			productName = GithubUserSearch;
 			productReference = D70A8ED32AC5B85C0095BE83 /* GithubUserSearch.app */;
@@ -1061,11 +1058,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D72887FF2AC5DAE900A8BF28 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
-		};
-		D7414E932ACFF6800016F9D1 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D7414E922ACFF6800016F9D1 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
