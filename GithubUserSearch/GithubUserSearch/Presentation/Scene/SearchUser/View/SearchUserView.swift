@@ -34,8 +34,9 @@ final class SearchUserView: UIView {
         return tableView
     }()
     
-    private var users: [UserInfo] = []
-    
+    private lazy var users: [UserInfo] = mockData
+    // MARK: - fixme
+    let mockData = [UserInfo(login: "s", avatarURL: "sdfs", url: "sdf"), UserInfo(login: "sdfasf", avatarURL: "sdfasdfasdfa", url: "sdfasdfkmvn")]
     // MARK: - init
     
     override init(frame: CGRect) {
