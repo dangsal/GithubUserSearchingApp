@@ -46,6 +46,13 @@ final class UserTableViewCell: UITableViewCell {
     
     // MARK: - func
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.userImageView.image = ImageLiteral.userDefaultProfile
+        self.userNameLabel.text = nil
+        self.userUrlLabel.text = nil
+    }
+    
     private func setupLayout() {
         self.contentView.addSubview(self.userImageView)
         self.userImageView.snp.makeConstraints {
