@@ -5,6 +5,7 @@
 //  Created by 이성호 on 2023/09/28.
 //
 
+import Combine
 import UIKit
 
 import SnapKit
@@ -12,11 +13,23 @@ import RxSwift
 
 final class SearchUserView: UIView {
     
+    // MARK: - ui component
+    private let userSearchTextField: UITextField = {
+        let textField = UITextField()
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.systemGray.cgColor
+        textField.layer.cornerRadius = SizeLiteral.textFieldCornerRadiusValue
+        textField.placeholder = TextLiterals.userSearchTextField
+        textField.returnKeyType = .search
+        return textField
+    }()
+    
     // MARK: - init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.configureUI()
+        self.setupLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +37,14 @@ final class SearchUserView: UIView {
     }
     
     // MARK: - func
+    
+    private func configureUI() {
+        self.backgroundColor = .white
+    }
+    
+    private func setupLayout() {
+        
+    }
     
     func configureNavigationBar(_ navigationController: UINavigationController) {
         navigationController.navigationItem.hidesBackButton = true

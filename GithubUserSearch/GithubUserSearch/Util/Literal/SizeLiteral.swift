@@ -15,4 +15,7 @@ enum SizeLiteral {
     // MARK: - padding
     static let leadingTrailingPadding: CGFloat = 20
     static let bottomPadding: CGFloat = 40
+    
+    // MARK: - textField
+    static let textFieldCornerRadiusValue: CGFloat = 8
 }
