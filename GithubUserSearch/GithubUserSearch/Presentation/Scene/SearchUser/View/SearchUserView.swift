@@ -21,6 +21,8 @@ final class SearchUserView: UIView {
         textField.layer.cornerRadius = SizeLiteral.textFieldCornerRadiusValue
         textField.placeholder = TextLiterals.userSearchTextField
         textField.returnKeyType = .search
+        textField.addPadding()
+        textField.addCustomClearButton()
         return textField
     }()
     
@@ -43,7 +45,12 @@ final class SearchUserView: UIView {
     }
     
     private func setupLayout() {
-        
+        self.addSubview(self.userSearchTextField)
+        self.userSearchTextField.snp.makeConstraints {
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(SizeLiteral.topPadding)
+            $0.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(SizeLiteral.leadingTrailingPadding)
+            $0.height.equalTo(SizeLiteral.userSearchTextFieldHeight)
+        }
     }
     
     func configureNavigationBar(_ navigationController: UINavigationController) {

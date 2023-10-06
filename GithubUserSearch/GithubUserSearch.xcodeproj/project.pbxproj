@@ -48,6 +48,7 @@
 		D7414E912ACFF64E0016F9D1 /* UITextField+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E902ACFF64E0016F9D1 /* UITextField+UI.swift */; };
 		D7414E962ACFF69A0016F9D1 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E952ACFF69A0016F9D1 /* ImageLiteral.swift */; };
 		D7414E982ACFF6BC0016F9D1 /* UIImage+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E972ACFF6BC0016F9D1 /* UIImage+UI.swift */; };
+		D7414E9A2ACFFE610016F9D1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E992ACFFE610016F9D1 /* UserTableViewCell.swift */; };
 		D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		D7414E902ACFF64E0016F9D1 /* UITextField+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+UI.swift"; sourceTree = "<group>"; };
 		D7414E952ACFF69A0016F9D1 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		D7414E972ACFF6BC0016F9D1 /* UIImage+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UI.swift"; sourceTree = "<group>"; };
+		D7414E992ACFFE610016F9D1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,7 +278,7 @@
 		D70A8F0E2AC5B8CC0095BE83 /* SearchUser */ = {
 			isa = PBXGroup;
 			children = (
-				D70A8F122AC5B8F20095BE83 /* UIComponent */,
+				D70A8F122AC5B8F20095BE83 /* Cell */,
 				D70A8F112AC5B8EC0095BE83 /* ViewModel */,
 				D70A8F102AC5B8EA0095BE83 /* View */,
 				D70A8F0F2AC5B8E40095BE83 /* ViewController */,
@@ -308,11 +310,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D70A8F122AC5B8F20095BE83 /* UIComponent */ = {
+		D70A8F122AC5B8F20095BE83 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D7414E992ACFFE610016F9D1 /* UserTableViewCell.swift */,
 			);
-			path = UIComponent;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D70A8F192AC5BC690095BE83 /* Extension */ = {
@@ -599,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D72887F92AC5CDC700A8BF28 /* LoginViewController.swift in Sources */,
+				D7414E9A2ACFFE610016F9D1 /* UserTableViewCell.swift in Sources */,
 				D70A8ED72AC5B85C0095BE83 /* AppDelegate.swift in Sources */,
 				7EA0497A2AC8526E00B5FD06 /* GithubOAuthManager.swift in Sources */,
 				D73921E42ACFF4E4002545EA /* TextLiteral.swift in Sources */,
