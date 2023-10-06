@@ -50,6 +50,7 @@
 		D7414E982ACFF6BC0016F9D1 /* UIImage+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E972ACFF6BC0016F9D1 /* UIImage+UI.swift */; };
 		D7414E9A2ACFFE610016F9D1 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E992ACFFE610016F9D1 /* UserTableViewCell.swift */; };
 		D7414E9D2AD017B90016F9D1 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E9C2AD017B90016F9D1 /* NSObject+Extension.swift */; };
+		D7414E9F2AD01B3F0016F9D1 /* EmptyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7414E9E2AD01B3F0016F9D1 /* EmptyViewCell.swift */; };
 		D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		D7414E972ACFF6BC0016F9D1 /* UIImage+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+UI.swift"; sourceTree = "<group>"; };
 		D7414E992ACFFE610016F9D1 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D7414E9C2AD017B90016F9D1 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		D7414E9E2AD01B3F0016F9D1 /* EmptyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewCell.swift; sourceTree = "<group>"; };
 		D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				D7414E992ACFFE610016F9D1 /* UserTableViewCell.swift */,
+				D7414E9E2AD01B3F0016F9D1 /* EmptyViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				D7414E9A2ACFFE610016F9D1 /* UserTableViewCell.swift in Sources */,
 				D70A8ED72AC5B85C0095BE83 /* AppDelegate.swift in Sources */,
 				7EA0497A2AC8526E00B5FD06 /* GithubOAuthManager.swift in Sources */,
+				D7414E9F2AD01B3F0016F9D1 /* EmptyViewCell.swift in Sources */,
 				D73921E42ACFF4E4002545EA /* TextLiteral.swift in Sources */,
 				D70A8F152AC5B96E0095BE83 /* SearchUserViewController.swift in Sources */,
 				D7414E982ACFF6BC0016F9D1 /* UIImage+UI.swift in Sources */,
