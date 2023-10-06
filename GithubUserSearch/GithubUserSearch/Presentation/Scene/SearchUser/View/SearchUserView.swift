@@ -33,6 +33,8 @@ final class SearchUserView: UIView {
         return tableView
     }()
     
+    private var users: [UserInfo]?
+    
     // MARK: - init
     
     override init(frame: CGRect) {
