@@ -14,6 +14,7 @@ import RxSwift
 final class SearchUserView: UIView {
     
     // MARK: - ui component
+    
     private let userSearchTextField: UITextField = {
         let textField = UITextField()
         textField.layer.borderWidth = 1
@@ -25,6 +26,12 @@ final class SearchUserView: UIView {
         textField.addCustomClearButton()
         return textField
     }()
+    private let userTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.className)
+        tableView.separatorInset.left = 0
+        return tableView
+    }()
     
     // MARK: - init
     
@@ -32,6 +39,7 @@ final class SearchUserView: UIView {
         super.init(frame: frame)
         self.configureUI()
         self.setupLayout()
+        self.setupDelegation()
     }
     
     required init?(coder: NSCoder) {
@@ -51,12 +59,48 @@ final class SearchUserView: UIView {
             $0.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(SizeLiteral.leadingTrailingPadding)
             $0.height.equalTo(SizeLiteral.userSearchTextFieldHeight)
         }
+        
+        self.addSubview(self.userTableView)
+        self.userTableView.snp.makeConstraints {
+            $0.top.equalTo(self.userSearchTextField.snp.bottom).offset(SizeLiteral.padding)
+            $0.leading.trailing.equalTo(self.userSearchTextField)
+            $0.bottom.equalToSuperview()
+        }
+    }
+    
+    private func setupDelegation() {
+        self.userTableView.dataSource = self
+        self.userTableView.delegate = self
+        self.userSearchTextField.delegate = self
     }
     
     func configureNavigationBar(_ navigationController: UINavigationController) {
         navigationController.navigationItem.hidesBackButton = true
     }
 }
+
+// MARK: - UITableViewDataSource
+extension SearchUserView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
+        return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension SearchUserView: UITableViewDelegate {
+    
+}
+
+// MARK: - UITextFieldDelegate
+extension SearchUserView: UITextFieldDelegate {
+    
+}
+
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
