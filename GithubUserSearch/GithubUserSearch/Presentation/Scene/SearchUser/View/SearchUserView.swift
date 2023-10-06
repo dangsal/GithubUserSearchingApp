@@ -22,4 +22,23 @@ final class SearchUserView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - func
+    
+    func configureNavigationBar(_ navigationController: UINavigationController) {
+        navigationController.navigationItem.hidesBackButton = true
+    }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct SearchUserViewPreview: PreviewProvider{
+    static var previews: some View {
+        UIViewPreview {
+            let view = SearchUserView()
+            return view
+        }.previewLayout(.sizeThatFits)
+    }
+}
+#endif

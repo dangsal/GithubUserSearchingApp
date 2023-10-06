@@ -43,6 +43,7 @@
 		D728880B2AC5DB2A00A8BF28 /* Key.plist in Resources */ = {isa = PBXBuildFile; fileRef = D728880A2AC5DB2A00A8BF28 /* Key.plist */; };
 		D728880D2AC5DB3200A8BF28 /* Key+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D728880C2AC5DB3200A8BF28 /* Key+Extension.swift */; };
 		D728880F2AC5DB3C00A8BF28 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D728880E2AC5DB3C00A8BF28 /* APIEnvironment.swift */; };
+		D73921E22ACFF08C002545EA /* SearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73921E12ACFF08C002545EA /* SearchUserViewModel.swift */; };
 		D7D66FBB2ACE94D70047BC6E /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		D728880A2AC5DB2A00A8BF28 /* Key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Key.plist; sourceTree = "<group>"; };
 		D728880C2AC5DB3200A8BF28 /* Key+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Key+Extension.swift"; sourceTree = "<group>"; };
 		D728880E2AC5DB3C00A8BF28 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		D73921E12ACFF08C002545EA /* SearchUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewModel.swift; sourceTree = "<group>"; };
 		D7D66FBA2ACE94D70047BC6E /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +295,7 @@
 		D70A8F112AC5B8EC0095BE83 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D73921E12ACFF08C002545EA /* SearchUserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				D728880D2AC5DB3200A8BF28 /* Key+Extension.swift in Sources */,
 				D70A8ED92AC5B85C0095BE83 /* SceneDelegate.swift in Sources */,
 				7EA0497C2AC8529900B5FD06 /* LoginEndPoint.swift in Sources */,
+				D73921E22ACFF08C002545EA /* SearchUserViewModel.swift in Sources */,
 				D728880F2AC5DB3C00A8BF28 /* APIEnvironment.swift in Sources */,
 				7EA049802AC8542700B5FD06 /* UserDefatultStorage.swift in Sources */,
 				D70A8F182AC5BAAB0095BE83 /* SearchUserView.swift in Sources */,
