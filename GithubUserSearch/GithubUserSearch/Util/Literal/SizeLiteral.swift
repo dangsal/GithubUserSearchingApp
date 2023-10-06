@@ -25,4 +25,7 @@ enum SizeLiteral {
     // MARK: - textField
     static let textFieldCornerRadiusValue: CGFloat = 8
     static let userSearchTextFieldHeight: CGFloat = 60
+    
+    // MARK: - tableView
+    static let tableViewCellHight: CGFloat = 72
 }

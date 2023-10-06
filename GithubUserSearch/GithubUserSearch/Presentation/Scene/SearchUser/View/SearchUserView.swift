@@ -29,11 +29,12 @@ final class SearchUserView: UIView {
     private let userTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UserTableViewCell.self, forCellReuseIdentifier: UserTableViewCell.className)
+        tableView.register(EmptyViewCell.self, forCellReuseIdentifier: EmptyViewCell.className)
         tableView.separatorInset.left = 0
         return tableView
     }()
     
-    private var users: [UserInfo]?
+    private var users: [UserInfo] = []
     
     // MARK: - init
     
@@ -84,12 +85,27 @@ final class SearchUserView: UIView {
 // MARK: - UITableViewDataSource
 extension SearchUserView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if self.users.isEmpty {
+            return 1
+        } else {
+            return self.users.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
-        return cell
+        if self.users.isEmpty {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: EmptyViewCell.className, for: indexPath) as? EmptyViewCell else { return UITableViewCell() }
+            tableView.separatorStyle = .none
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.className, for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
+            tableView.separatorStyle = .singleLine
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SizeLiteral.tableViewCellHight
     }
 }
 
